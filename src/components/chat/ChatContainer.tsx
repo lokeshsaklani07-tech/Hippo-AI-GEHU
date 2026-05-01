@@ -107,9 +107,11 @@ export function ChatContainer() {
                   ? "glass-card text-white/90" 
                   : "bg-hippo-primary/20 border border-hippo-primary/30 text-white"
               )}>
-                <ReactMarkdown className="prose prose-invert prose-sm max-w-none">
-                  {m.content}
-                </ReactMarkdown>
+                <div className="prose prose-invert prose-sm max-w-none">
+                  <ReactMarkdown>
+                    {m.content}
+                  </ReactMarkdown>
+                </div>
 
                 {m.citations && m.citations.length > 0 && (
                   <div className="mt-4 pt-4 border-t border-white/10 space-y-2">

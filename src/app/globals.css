@@ -1,6 +1,48 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+@theme {
+  --color-hippo-primary: #0ea5e9;
+  --color-hippo-secondary: #6366f1;
+  --color-hippo-accent: #22d3ee;
+  --color-hippo-dark: #020617;
+  --color-hippo-glass: rgba(15, 23, 42, 0.65);
+  
+  --shadow-neon: 0 0 15px rgba(14, 165, 233, 0.4);
+  --shadow-neon-strong: 0 0 25px rgba(14, 165, 233, 0.6);
+  
+  --animate-pulse-slow: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  --animate-float: float 6s ease-in-out infinite;
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+}
+
+@utility glass-card {
+  background-color: var(--color-hippo-glass);
+  backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+}
+
+@utility jarvis-input {
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 0.75rem;
+  padding: 0.75rem 1rem;
+  transition: all 0.2s;
+  &:focus {
+    outline: none;
+    border-color: rgba(14, 165, 233, 0.5);
+    box-shadow: 0 0 0 1px rgba(14, 165, 233, 0.3);
+  }
+}
+
+@utility glow-text {
+  color: var(--color-hippo-primary);
+  filter: drop-shadow(0 0 8px rgba(14, 165, 233, 0.5));
+}
 
 :root {
   --background: #020617;
@@ -16,20 +58,6 @@ body {
   background-attachment: fixed;
   min-height: 100vh;
   font-family: 'Inter', sans-serif;
-}
-
-@layer components {
-  .glass-card {
-    @apply bg-hippo-glass backdrop-blur-xl border border-white/10 shadow-2xl;
-  }
-  
-  .jarvis-input {
-    @apply bg-white/5 border border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:border-hippo-primary/50 transition-all focus:ring-1 focus:ring-hippo-primary/30;
-  }
-
-  .glow-text {
-    @apply text-hippo-primary drop-shadow-[0_0_8px_rgba(14,165,233,0.5)];
-  }
 }
 
 /* Custom Scrollbar */

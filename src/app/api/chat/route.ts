@@ -1,6 +1,7 @@
 import { GoogleGenerativeAI } from "@google/generative-ai";
 import { searchWeb } from "@/lib/tavily";
 import { NextResponse } from "next/server";
+import collegeData from "@/lib/college_data.json";
 
 export async function POST(req: Request) {
   try {
@@ -13,7 +14,6 @@ export async function POST(req: Request) {
     }
 
     const genAI = new GoogleGenerativeAI(apiKey);
-    // Setting up the model with optimized generation parameters
     const model = genAI.getGenerativeModel({ 
       model: "gemini-1.5-flash",
       generationConfig: {
@@ -22,8 +22,8 @@ export async function POST(req: Request) {
       }
     });
 
-    // 1. Intelligent Search Trigger
-    const needsSearch = /search|news|latest|what is|how to|about|subject|who is|where is|today|current/i.test(lastMessage);
+    // 1. Search Logic
+    const needsSearch = /news|latest|today|current|event/i.test(lastMessage);
     
     let searchContext = "";
     let citations: any[] = [];
@@ -33,23 +33,24 @@ export async function POST(req: Request) {
         const searchResults = await searchWeb(lastMessage);
         if (searchResults && searchResults.length > 0) {
           citations = searchResults.map((r: any) => ({ title: r.title, url: r.url }));
-          searchContext = "\n\nWEB SEARCH RESULTS FOR CONTEXT:\n" + searchResults.map((r: any) => `[${r.title}]: ${r.content}`).join("\n\n");
+          searchContext = "\n\nWEB SEARCH RESULTS:\n" + searchResults.map((r: any) => `[${r.title}]: ${r.content}`).join("\n\n");
         }
       } catch (searchError) {
         console.error("Search failed:", searchError);
       }
     }
 
-    // 2. Hippo Persona - System Instruction
-    const systemInstruction = `You are Hippo, the official AI collaborator for students at Graphic Era Hill University (GEHU).
+    // 2. Hippo Persona + Local Knowledge Base
+    const systemInstruction = `You are Hippo, the official AI collaborator for students at GEHU.
+    
+    GROUND TRUTH COLLEGE DATA:
+    ${JSON.stringify(collegeData, null, 2)}
 
-    TONE: You are not a robot; you are a supportive, grounded, and witty peer. Balance empathy with candor.
-    STYLE: Use clear, concise Markdown. Use bolding to guide the eye. Use bullet points and horizontal rules (---) to separate ideas. Keep it scannable. Use emojis to keep it friendly 🦛✨.
-    LANGUAGE: Primarily English, but if a student uses Hindi, respond in 'Hinglish' (Hindi written in English script) to keep it relatable.
-    LOCAL KNOWLEDGE: You are a GEHU expert. You know about Dehradun, the college campus, and common student struggles (assignments, exams, local food, ERP login issues).
-    RULE: Never be a rigid lecturer. Be the smart friend who has all the answers and knows how to explain them simply. 
-    CITATIONS: If web search results are provided below, cite your source naturally like a helpful peer (e.g., "According to [Source Title]...").
-
+    TONE: Supportive, grounded, and witty peer. 
+    STYLE: Use Markdown (bold, bullets, rules). Scannable.
+    LANGUAGE: English/Hinglish.
+    RULE: Use the GROUND TRUTH DATA above to answer questions about courses, fees, placements, admission, and facilities with 100% accuracy. If the data is not in the ground truth, you can use your general knowledge or the provided web context.
+    
     WEB CONTEXT: ${searchContext}`;
 
     const prompt = `${systemInstruction}\n\nUser Query: ${lastMessage}`;

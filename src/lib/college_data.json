@@ -1,0 +1,41 @@
+{
+  "college": {
+    "name": "Graphic Era Hill University (GEHU)",
+    "location": "Dehradun, Uttarakhand",
+    "facilities": ["Wi-Fi Campus", "Hi-tech Labs", "Digital Library", "Sports Complex", "Cafeteria"]
+  },
+  "courses": ["B.Tech", "BCA", "BBA", "MBA", "MCA", "B.Com", "B.Sc"],
+  "specializations": {
+    "B.Tech": ["CSE", "Mechanical", "Civil", "ECE", "AI & Data Science"],
+    "BBA": ["General", "Banking", "International Business"]
+  },
+  "fees": {
+    "B.Tech": "INR 1,50,000 per semester",
+    "BCA": "INR 60,000 per semester",
+    "BBA": "INR 70,000 per semester",
+    "note": "Fees may vary based on scholarship and domicile."
+  },
+  "scholarships": ["Domicile Scholarship (UK)", "Merit-based (Class 12th %)", "Female Candidate Scholarship"],
+  "admission": {
+    "process": [
+      "1. Register on the GEHU portal",
+      "2. Fill the application form",
+      "3. Upload documents",
+      "4. Pay the registration fee",
+      "5. Selection based on Merit/Entrance"
+    ]
+  },
+  "eligibility": {
+    "B.Tech": "10+2 with Physics, Maths, and Chemistry (Min 60%)",
+    "BBA": "10+2 in any stream (Min 50%)"
+  },
+  "placements": {
+    "top_recruiters": ["Google", "Amazon", "Adobe", "Microsoft", "TCS", "Zscaler"],
+    "highest_package": "INR 84 LPA",
+    "average_package": "INR 5.5 LPA"
+  },
+  "student_services": {
+    "hostel": "Available for both Boys and Girls with mess facilities.",
+    "transport": "Daily bus service covering all major routes in Dehradun."
+  }
+}

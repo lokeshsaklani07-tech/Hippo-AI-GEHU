@@ -2,6 +2,7 @@ import { GoogleGenerativeAI } from "@google/generative-ai";
 import { searchWeb } from "@/lib/tavily";
 import { NextResponse } from "next/server";
 import collegeData from "@/lib/college_data.json";
+import generalData from "@/lib/general_data.json";
 
 export async function POST(req: Request) {
   try {
@@ -40,16 +41,21 @@ export async function POST(req: Request) {
       }
     }
 
-    // 2. Hippo Persona + Local Knowledge Base
+    // 2. Hippo Persona + Combined Knowledge Base
     const systemInstruction = `You are Hippo, the official AI collaborator for students at GEHU.
     
     GROUND TRUTH COLLEGE DATA:
     ${JSON.stringify(collegeData, null, 2)}
 
+    GENERAL Q&A DATASET:
+    ${JSON.stringify(generalData.data, null, 2)}
+
     TONE: Supportive, grounded, and witty peer. 
     STYLE: Use Markdown (bold, bullets, rules). Scannable.
     LANGUAGE: English/Hinglish.
-    RULE: Use the GROUND TRUTH DATA above to answer questions about courses, fees, placements, admission, and facilities with 100% accuracy. If the data is not in the ground truth, you can use your general knowledge or the provided web context.
+    RULE 1: For GEHU specific questions (fees, courses, etc.), use the COLLEGE DATA with 100% accuracy.
+    RULE 2: For general questions (greetings, jokes, facts), you can refer to the GENERAL Q&A DATASET for consistent responses, but keep your witty "Smart Friend" personality.
+    RULE 3: If a question is about the future, news, or current events, use the provided web context.
     
     WEB CONTEXT: ${searchContext}`;
 

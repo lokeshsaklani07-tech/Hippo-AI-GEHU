@@ -9,8 +9,11 @@ export async function POST(req: Request) {
     const { messages } = await req.json();
     const lastMessage = messages[messages.length - 1].content;
 
+    console.log("Hippo received message:", lastMessage);
+
     const apiKey = process.env.GEMINI_API_KEY;
     if (!apiKey) {
+      console.error("Missing GEMINI_API_KEY");
       return NextResponse.json({ error: "API Key missing" }, { status: 500 });
     }
 
@@ -18,14 +21,13 @@ export async function POST(req: Request) {
     const model = genAI.getGenerativeModel({ 
       model: "gemini-1.5-flash",
       generationConfig: {
-        maxOutputTokens: 2048,
-        temperature: 0.7,
+        maxOutputTokens: 1024,
+        temperature: 0.8, // Slightly higher for better personality
       }
     });
 
     // 1. Search Logic
     const needsSearch = /news|latest|today|current|event/i.test(lastMessage);
-    
     let searchContext = "";
     let citations: any[] = [];
 
@@ -36,34 +38,31 @@ export async function POST(req: Request) {
           citations = searchResults.map((r: any) => ({ title: r.title, url: r.url }));
           searchContext = "\n\nWEB SEARCH RESULTS:\n" + searchResults.map((r: any) => `[${r.title}]: ${r.content}`).join("\n\n");
         }
-      } catch (searchError) {
-        console.error("Search failed:", searchError);
-      }
+      } catch (e) { console.error("Search error", e); }
     }
 
-    // 2. Hippo Persona + Combined Knowledge Base
-    const systemInstruction = `You are Hippo, the official AI collaborator for students at GEHU.
+    // 2. Simplified Persona for faster response
+    const systemInstruction = `You are Hippo, the official AI collaborator for GEHU students. 
+    You are a witty, supportive, and grounded peer.
     
-    GROUND TRUTH COLLEGE DATA:
-    ${JSON.stringify(collegeData, null, 2)}
+    KNOWLEDGE BASE (GEHU):
+    ${JSON.stringify(collegeData)}
 
-    GENERAL Q&A DATASET:
-    ${JSON.stringify(generalData.data, null, 2)}
+    KNOWLEDGE BASE (GENERAL):
+    (Refer to this only for specific facts, jokes, or tech tips):
+    ${JSON.stringify(generalData.data.slice(0, 15))} ... (and 45 more entries)
 
-    TONE: Supportive, grounded, and witty peer. 
-    STYLE: Use Markdown (bold, bullets, rules). Scannable.
+    TONE: Friendly peer. Use emojis.
+    STYLE: Scannable Markdown.
     LANGUAGE: English/Hinglish.
-    RULE 1: For GEHU specific questions (fees, courses, etc.), use the COLLEGE DATA with 100% accuracy.
-    RULE 2: For general questions (greetings, jokes, facts), you can refer to the GENERAL Q&A DATASET for consistent responses, but keep your witty "Smart Friend" personality.
-    RULE 3: If a question is about the future, news, or current events, use the provided web context.
-    
-    WEB CONTEXT: ${searchContext}`;
+    RULE: Be concise. If the user says "Hi", just be your friendly self!`;
 
-    const prompt = `${systemInstruction}\n\nUser Query: ${lastMessage}`;
+    const prompt = `${systemInstruction}\n\nUser Query: ${lastMessage}${searchContext}`;
 
+    console.log("Calling Gemini API...");
     const result = await model.generateContent(prompt);
-    const response = await result.response;
-    const text = response.text();
+    const text = result.response.text();
+    console.log("Gemini responded successfully.");
 
     return NextResponse.json({ 
       content: text,
@@ -71,7 +70,7 @@ export async function POST(req: Request) {
     });
 
   } catch (error: any) {
-    console.error("CHAT API ERROR:", error.message || error);
+    console.error("CRITICAL API ERROR:", error);
     return NextResponse.json({ error: error.message || "Internal Server Error" }, { status: 500 });
   }
 }

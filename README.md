@@ -1,4 +1,4 @@
-# 🦛 Hippo AI - GEHU Student Assistant
+# 🦛 Hippo-AI-GEHU2
 
 Hippo is a professional, Jarvis-style AI chatbot designed specifically for students of **Graphic Era Hill University (GEHU)**. Built with a premium glassmorphic interface, it leverages Gemini 1.5 Flash and Tavily Search to provide cited, real-time answers.
 
@@ -26,8 +26,8 @@ Hippo is a professional, Jarvis-style AI chatbot designed specifically for stude
 
 ### 1. Clone the repository
 ```bash
-git clone <your-repo-url>
-cd hippo-ai
+git clone https://github.com/yourusername/Hippo-AI-GEHU2.git
+cd Hippo-AI-GEHU2
 ```
 
 ### 2. Install dependencies

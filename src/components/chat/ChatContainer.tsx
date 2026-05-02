@@ -43,7 +43,7 @@ export function ChatContainer() {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ 
-          messages: [...messages, { role: "user", content: userMessage }] 
+          messages: [...messages, { role: "user", content: userMessage }].map(({ role, content }) => ({ role, content }))
         }),
       });
 

@@ -85,7 +85,7 @@ export function ChatContainer() {
   return (
     <div className="flex-1 flex flex-col h-screen relative overflow-hidden">
       {/* Header */}
-      <header className="h-16 flex items-center justify-between px-8 border-b border-white/5 backdrop-blur-md sticky top-0 z-10">
+      <header className="h-16 flex items-center justify-between pl-16 pr-6 md:px-8 border-b border-white/5 backdrop-blur-md sticky top-0 z-10">
         <div className="flex items-center gap-3">
           <div className={cn(
             "w-2 h-2 rounded-full bg-hippo-primary",

@@ -114,7 +114,7 @@ export function ChatContainer() {
       {/* Messages */}
       <div 
         ref={scrollRef}
-        className="flex-1 overflow-y-auto p-6 md:p-12 space-y-8 pb-32"
+        className="flex-1 overflow-y-auto p-6 md:p-12 md:pb-48 pb-40 space-y-8"
       >
         <AnimatePresence initial={false}>
           {messages.map((m, idx) => (
@@ -215,9 +215,6 @@ export function ChatContainer() {
             </button>
           </div>
         </form>
-        <p className="text-center text-[10px] text-white/20 mt-3 tracking-widest uppercase">
-          Neural Interface Secured • Powered by Gemini Flash 1.5
-        </p>
       </div>
     </div>
   );

@@ -6,6 +6,23 @@ import generalData from "@/lib/general_data.json";
 import gehuFaq from "@/lib/gehu_faq.json";
 import botResponses from "@/lib/bot_responses.json";
 
+const DEVANAGARI_RE = /[\u0900-\u097F]/;
+const HINDI_KEYWORDS = new Set([
+    "bhai","yaar","kaise","kya","hai","ho","mujhe","tum","ka","ki",
+    "mera","mere","bhi","na","ab","abhi","thik","padh","lecture",
+    "assignment","exam","semester","hostel","scholarship","fees"
+]);
+
+function isHinglish(text: string): boolean {
+    if (DEVANAGARI_RE.test(text)) return true;
+    const words = text.toLowerCase().match(/\b\w+\b/g) || [];
+    let hits = 0;
+    for (const w of words) {
+        if (HINDI_KEYWORDS.has(w)) hits++;
+    }
+    return hits >= 2;
+}
+
 const groq = new Groq({ apiKey: process.env.GROQ_API_KEY });
 
 export async function POST(req: Request) {
@@ -33,13 +50,7 @@ export async function POST(req: Request) {
     }
 
     // 2. Multi-Source Knowledge Injection (RAG-lite)
-    const systemInstruction = `You are Hippo, the official AI collaborator for students at GEHU.
-
-    TONE: Not a robot; a supportive, grounded, and witty peer. Empathy + candor.
-    STYLE: Concise Markdown, bolding, scannable. 
-    LANGUAGE: English/Hinglish.
-    LOCAL EXPERT: You know Dehradun, campus life, and student struggles.
-
+    const baseContext = `
     KNOWLEDGE BASES:
     1. GEHU OFFICIAL FAQ (Crawled): ${JSON.stringify(gehuFaq)}
     2. COLLEGE DATA (Structural): ${JSON.stringify(collegeData)}
@@ -51,6 +62,28 @@ export async function POST(req: Request) {
     LEAD CAPTURE RULE: If a user asks about 'Admission' or 'Fees', you MUST include this exact phrase in your response: 'Main aapki help kar sakta hoon! Kya aap apna Phone Number aur Course share karenge? Humari team aapko contact kar legi.'
 
     WEB CONTEXT: ${searchContext}`;
+
+    const systemInstructionEn = `You are a Gen-Z student-assistant for Graphic Era Hill University (GEHU).
+    Speak casually and keep answers short, friendly and to-the-point.
+    
+    Language rule: 
+    - The user wrote in English, so you MUST answer ONLY in English. Never mix English and Hindi.
+    - Keep it crisp (e.g., "The scholarship is 10% for female candidates").
+    - Use emojis sparingly (👍, 🙌).
+    ${baseContext}`;
+
+    const systemInstructionHi = `You are a Gen-Z student-assistant for Graphic Era Hill University (GEHU).
+    Speak casually and keep answers short, friendly and to-the-point.
+    
+    Language rule: 
+    - The user wrote in Hinglish, so you MUST answer in Hinglish.
+    - Sprinkle "bhai", "yaar", "kaise" etc. Use campus-specific terms ("semester-waale", "batch").
+    - Keep the same vibe (e.g., "Scholarship ke liye 10% female candidates ko milta hai").
+    - Use emojis sparingly (👍, 🙌).
+    ${baseContext}`;
+
+    const lang = isHinglish(lastMessage) ? "hi" : "en";
+    const systemInstruction = lang === "hi" ? systemInstructionHi : systemInstructionEn;
 
     // Extract potential leads
     const phoneRegex = /\b\d{10}\b/;

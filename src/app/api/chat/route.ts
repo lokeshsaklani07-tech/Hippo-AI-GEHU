@@ -53,17 +53,6 @@ export async function POST(req: Request) {
 
     const lang = isHinglish(lastMessage) ? "hi" : "en";
 
-    // 1. Data Logging (Memory for Learning)
-    const fs = require('fs');
-    const path = require('path');
-    const historyDir = path.join(process.cwd(), 'data', 'history');
-    if (!fs.existsSync(historyDir)) fs.mkdirSync(historyDir, { recursive: true });
-    fs.appendFileSync(path.join(historyDir, 'user_interactions.jsonl'), JSON.stringify({
-      t: new Date().toISOString(),
-      q: lastMessage,
-      l: lang
-    }) + '\n');
-
     // 2. Optimized Knowledge Base
     const baseContext = `
     KNOWLEDGE:

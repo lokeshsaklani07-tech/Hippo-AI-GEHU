@@ -36,8 +36,8 @@ export async function POST(req: Request) {
       return NextResponse.json({ error: "Groq API Key missing" }, { status: 500 });
     }
 
-    // 1. Intelligent Search Logic - Enhanced for Global GK & Current Affairs
-    const needsSearch = /news|latest|today|current|event|price|who is|what is|trending|happen/i.test(lastMessage);
+    // 1. Intelligent Search Logic
+    const needsSearch = /news|latest|today|current|event|price/i.test(lastMessage);
     let searchContext = "";
     let citations: any[] = [];
 
@@ -46,53 +46,46 @@ export async function POST(req: Request) {
         const searchResults = await searchWeb(lastMessage);
         if (searchResults && searchResults.length > 0) {
           citations = searchResults.map((r: any) => ({ title: r.title, url: r.url }));
-          searchContext = "\n\nLATEST GLOBAL NEWS & GK (Real-time):\n" + searchResults.map((r: any) => `[${r.title}]: ${r.content}`).join("\n\n");
+          searchContext = "\n\nWEB SEARCH RESULTS:\n" + searchResults.map((r: any) => `[${r.title}]: ${r.content}`).join("\n\n");
         }
       } catch (e) { console.error("Search error", e); }
     }
 
     const lang = isHinglish(lastMessage) ? "hi" : "en";
 
-    // 2. Multi-Source Knowledge Injection
+    // 2. Multi-Source Knowledge Injection (RAG-lite)
     const baseContext = `
-    GLOBAL BRAIN & ACADEMIC KNOWLEDGE:
-    - You are a high-level intellectual. You have deep knowledge of every academic theory, paradox, and scientific concept (Maths, Physics, Chemistry, Economics, etc.).
-    - If asked about a theory (e.g., Fermi Paradox, Schrödinger's Cat, Game Theory), explain it with depth but in a relatable Gen-Z way.
-    
     KNOWLEDGE BASES:
     1. GEHU OFFICIAL FAQ: ${JSON.stringify(gehuFaq)}
     2. COLLEGE DATA: ${JSON.stringify(collegeData)}
-    3. PYQs REPOSITORY: ${JSON.stringify(pyqsIndex)}
+    3. PYQs REPOSITORY (Drive): ${JSON.stringify(pyqsIndex)}
     4. BOT RESPONSES: ${JSON.stringify(botResponses)}
 
-    REAL-TIME UPDATES: ${searchContext}
+    PYQ RULE: 
+    - If a user asks for PYQs, Question Papers, or Solutions, tell them you have a repository from 2019 to 2025.
+    - Give them this link: ${pyqsIndex.pyq_repository.link}
+    
+    LEAD CAPTURE RULE: If a user asks about 'Admission' or 'Fees', you MUST include: 'Main aapki help kar sakta hoon! Kya aap apna Phone Number aur Course share karenge? Humari team aapko contact kar legi.'
 
-    PYQ RULE: Tell them about the 2019-2025 repository and give the link: ${pyqsIndex.pyq_repository.link}
-    
-    LEAD CAPTURE RULE: If a user asks about 'Admission' or 'Fees', you MUST include: 'Main aapki help kar sakta hoon! Kya aap apna Phone Number aur Course share karenge? Humari team aapko contact kar legi.'`;
+    WEB CONTEXT: ${searchContext}`;
 
-    const systemInstructionEn = `You are Hippo, the Elite AI Assistant for GEHU.
-    You are brilliant, well-read, and always up-to-date with current affairs.
+    const systemInstructionEn = `You are a Gen-Z student-assistant for Graphic Era Hill University (GEHU).
+    Speak casually and keep answers short, friendly and to-the-point.
     
-    Tone: Smart, helpful, campus-vibe, Gen-Z but highly intellectual.
-    
-    Guidelines:
-    - For GEHU specific queries, use the provided FAQ/College Data.
-    - For Academic/General Knowledge, go DEEP. Explain theories, paradoxes, and complex concepts with precision.
-    - For News, use the provided REAL-TIME UPDATES.
-    - Answer ONLY in English. Keep it crisp but informative.
+    Language rule: 
+    - The user wrote in English, so you MUST answer ONLY in English. Never mix English and Hindi.
+    - Keep it crisp (e.g., "The scholarship is 10% for female candidates").
+    - Use emojis sparingly (👍, 🙌).
     ${baseContext}`;
 
-    const systemInstructionHi = `You are Hippo, the Elite AI Assistant for GEHU.
-    You are brilliant, well-read, and always up-to-date with current affairs.
+    const systemInstructionHi = `You are a Gen-Z student-assistant for Graphic Era Hill University (GEHU).
+    Speak casually and keep answers short, friendly and to-the-point.
     
-    Tone: Hinglish (Hindi + English), cool, intellectual friend vibe.
-    
-    Guidelines:
-    - For GEHU queries, use FAQ/College Data.
-    - For Academic/Theories, go DEEP. Paradoxes aur complex concepts ko aasaan bhasha mein samjhao.
-    - For News, use REAL-TIME UPDATES.
-    - Answer in Hinglish. Use campus terms like "bhai", "scam", "lit", "sorted".
+    Language rule: 
+    - The user wrote in Hinglish, so you MUST answer in Hinglish.
+    - Sprinkle "bhai", "yaar", "kaise" etc. Use campus-specific terms ("semester-waale", "batch").
+    - Keep the same vibe (e.g., "Scholarship ke liye 10% female candidates ko milta hai").
+    - Use emojis sparingly (👍, 🙌).
     ${baseContext}`;
 
     const systemInstruction = lang === "hi" ? systemInstructionHi : systemInstructionEn;

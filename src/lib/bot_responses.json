@@ -1,0 +1,136 @@
+{
+  "courses_keywords": ["course", "courses", "program", "programs"],
+  "courses_response": "Available Courses/Programs: BBA, B.A, BCA, B.TECH, B.Sc, MBA, MCA, M.A, M.TECH",
+
+  "specialization": {
+    "bba_keywords": ["bba specialization", "bba specialisation"],
+    "bba_response": "BBA Specialization:\n1. Hospital Management\n2. Digital Marketing\n3. E-commerce\n4. Artificial Intelligence & Data Science\n5. Entrepreneurship",
+
+    "bca_keywords": ["bca specialization", "bca specialisation"],
+    "bca_response": "BCA Specialization:\n1. Artificial Intelligence & Machine Learning (AI & ML)\n2. Data Science / Big Data Analytics\n3. Cyber Security & Ethical Hacking\n4. Cloud Computing\n5. Internet of Things (IoT)",
+
+    "mba_keywords": ["mba specialization", "mba specialisation"],
+    "mba_response": "MBA Specialization:\n1. Finance\n2. Business Analytics\n3. Marketing\n4. HR",
+
+    "mca_keywords": ["mca specialization", "mca specialisation"],
+    "mca_response": "MCA Specialization:\n1. Artificial Intelligence & Machine Learning (AI & ML)\n2. Data Science / Big Data Analytics\n3. Cyber Security & Ethical Hacking\n4. Cloud Computing\n5. Internet of Things (IoT)"
+  },
+
+  "fees_scholarship": {
+    "keywords": ["fees", "fee", "cost", "fess", "scholarship"],
+    "response": "For fees and scholarship details, please visit the official website."
+  },
+
+  "scholarships": {
+    "keywords": ["scholarship", "scholarships"],
+    "response": "Kinds of Scholarships:\n1. Academic Scholarship (Merit-Based - based on 12th percentage)\n2. Female Scholarship - 5%\n3. Defence Scholarship - 5%\n4. Diversity Scholarship - 10%\n5. Domicile Scholarship - 10%"
+  },
+
+  "fees": {
+    "bba": {
+      "keywords": ["bba fees", "bba fee", "bba cost"],
+      "response": "BBA Fees: 1.2 - 1.5 Lakh/year"
+    },
+    "ba": {
+      "keywords": ["b.a fees", "ba fees", "ba fee"],
+      "response": "B.A Fees: 1.1 - 1.5 Lakh/year"
+    },
+    "bca": {
+      "keywords": ["bca fees", "bca fee"],
+      "response": "BCA Fees: 1.4 - 1.7 Lakh/year"
+    },
+    "btech": {
+      "keywords": ["b.tech fees", "btech fees"],
+      "response": "B.TECH Fees: 2.3 - 2.5 Lakh/year"
+    },
+    "bsc": {
+      "keywords": ["b.sc fees", "bsc fees"],
+      "response": "B.Sc Fees: 1.2 - 1.5 Lakh/year"
+    },
+    "mba": {
+      "keywords": ["mba fees", "mba fee"],
+      "response": "MBA Fees: 2.2 - 2.5 Lakh/year"
+    },
+    "mca": {
+      "keywords": ["mca fees", "mca fee"],
+      "response": "MCA Fees: 2.0 - 2.2 Lakh/year"
+    },
+    "ma": {
+      "keywords": ["m.a fees", "ma fees"],
+      "response": "M.A Fees: 1.3 - 1.6 Lakh/year"
+    },
+    "mtech": {
+      "keywords": ["m.tech fees", "mtech fees"],
+      "response": "M.TECH Fees: 2.5 - 2.8 Lakh/year"
+    }
+  },
+
+  "services": {
+    "keywords": ["time table", "fees details", "id card"],
+    "responses": {
+      "time_table": "Check time-table on student dashboard.",
+      "fees": "Details available on college portal.",
+      "id_card": "You can apply for ID cards in the admin office."
+    }
+  },
+
+  "admission": {
+    "keywords": ["admission", "apply", "enrollment"],
+    "response": "For admission, visit campus or apply through the official website."
+  },
+
+  "accommodation": {
+    "keywords": ["hostel", "accommodation"],
+    "response": "Hostel facility available for both girls and boys."
+  },
+
+  "transport": {
+    "keywords": ["transport", "bus"],
+    "response": "Bus facility available."
+  },
+
+  "documents_required": {
+    "keywords": ["documents", "required documents"],
+    "response": "Required Details:\n1. Personal: Name, DOB, Mobile, Email, Address\n2. Academic: 10th, 12th, Stream, Graduation (for PG)\n3. Documents: Photo, Aadhaar, Migration, TC, Character Certificate\n4. Other: Category, Domicile\n5. Entrance Exams: CUET (Optional), JEE (For B.Tech)"
+  },
+
+  "admission_process": {
+    "keywords": ["process", "steps", "procedure"],
+    "response": "Admission Process:\n1. Fill online application form\n2. Upload document\n3. Pay registration fee\n4. Wait for confirmation\n5. Pay admission fee"
+  },
+
+  "eligibility": {
+    "keywords": ["eligibility"],
+    "response": "Eligibility:\nBBA/BCA: 12th Pass\nB.TECH: PCM required\nMBA/MCA/M.TECH: Graduation required"
+  },
+
+  "college_info": {
+    "keywords": ["location", "college info", "details"],
+    "response": "Location: Bell Road, Clement Town, Dehradun, Uttarakhand - 248002\nCampus: Modern campus with green spaces\nFacilities: Smart classrooms, labs, library, auditorium, placement cell, sports & gym"
+  },
+
+  "placements": {
+    "keywords": ["placement", "package"],
+    "response": "Top Recruiters: Amazon, Google, Microsoft, Adobe\nHighest Package: ₹61.99 LPA\nAverage Package: ₹5 LPA"
+  },
+
+  "uniform": {
+    "keywords": ["uniform"],
+    "response": "Uniform Rules:\nMonday & Thursday: Formal\nTuesday-Friday: Semi-formal\nSaturday: Informal"
+  },
+
+  "contact": {
+    "keywords": ["contact", "helpline"],
+    "response": "Admission Office: 9807654365\nHelpline: 1800 654 789"
+  },
+
+  "gecet": {
+    "keywords": ["gecet"],
+    "response": "GECET (Graphic Era Common Entrance Test):\n- Up to 100% Scholarship\n- Mode: Online\n- Last Date: 6 May 2026\n- Time: 11:00 AM - 01:00 PM"
+  },
+
+  "winter_intake": {
+    "keywords": ["winter intake"],
+    "response": "Winter intake admissions are open for selected courses. Apply through the official website or visit campus. Check website for eligibility and deadlines."
+  }
+}

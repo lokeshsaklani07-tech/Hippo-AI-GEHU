@@ -4,6 +4,7 @@ import { NextResponse } from "next/server";
 import collegeData from "@/lib/college_data.json";
 import generalData from "@/lib/general_data.json";
 import gehuFaq from "@/lib/gehu_faq.json";
+import botResponses from "@/lib/bot_responses.json";
 
 const groq = new Groq({ apiKey: process.env.GROQ_API_KEY });
 
@@ -42,9 +43,10 @@ export async function POST(req: Request) {
     KNOWLEDGE BASES:
     1. GEHU OFFICIAL FAQ (Crawled): ${JSON.stringify(gehuFaq)}
     2. COLLEGE DATA (Structural): ${JSON.stringify(collegeData)}
-    3. GENERAL Q&A: ${JSON.stringify(generalData.data.slice(0, 5))}...
+    3. BOT RESPONSES & INTENTS: ${JSON.stringify(botResponses)}
+    4. GENERAL Q&A: ${JSON.stringify(generalData.data.slice(0, 5))}...
 
-    RULE: Use the FAQ and College Data first for high accuracy on admissions, contacts, and courses. 
+    RULE: Use the FAQ, College Data, and Bot Responses first for high accuracy on admissions, contacts, courses, fees, etc. 
     If you use the internet search, cite your source naturally. Be the smart friend who explains simply.
 
     WEB CONTEXT: ${searchContext}`;

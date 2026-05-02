@@ -5,12 +5,14 @@ import collegeData from "@/lib/college_data.json";
 import generalData from "@/lib/general_data.json";
 import gehuFaq from "@/lib/gehu_faq.json";
 import botResponses from "@/lib/bot_responses.json";
+import pyqsIndex from "@/lib/pyqs_index.json";
 
 const DEVANAGARI_RE = /[\u0900-\u097F]/;
 const HINDI_KEYWORDS = new Set([
     "bhai","yaar","kaise","kya","hai","ho","mujhe","tum","ka","ki",
     "mera","mere","bhi","na","ab","abhi","thik","padh","lecture",
-    "assignment","exam","semester","hostel","scholarship","fees"
+    "assignment","exam","semester","hostel","scholarship","fees",
+    "paper","pyq","solution","solve","previous","year","paper"
 ]);
 
 function isHinglish(text: string): boolean {
@@ -52,14 +54,18 @@ export async function POST(req: Request) {
     // 2. Multi-Source Knowledge Injection (RAG-lite)
     const baseContext = `
     KNOWLEDGE BASES:
-    1. GEHU OFFICIAL FAQ (Crawled): ${JSON.stringify(gehuFaq)}
-    2. COLLEGE DATA (Structural): ${JSON.stringify(collegeData)}
-    3. BOT RESPONSES & INTENTS: ${JSON.stringify(botResponses)}
-    4. GENERAL Q&A: ${JSON.stringify(generalData.data.slice(0, 5))}...
+    1. GEHU OFFICIAL FAQ: ${JSON.stringify(gehuFaq)}
+    2. COLLEGE DATA: ${JSON.stringify(collegeData)}
+    3. PYQs REPOSITORY (Drive): ${JSON.stringify(pyqsIndex)}
+    4. BOT RESPONSES: ${JSON.stringify(botResponses)}
+    5. GENERAL Q&A: ${JSON.stringify(generalData.data.slice(0, 5))}...
 
-    RULE: Use the FAQ, College Data, and Bot Responses first for high accuracy on admissions, contacts, courses, fees, etc. 
-    If you use the internet search, cite your source naturally. Be the smart friend who explains simply.
-    LEAD CAPTURE RULE: If a user asks about 'Admission' or 'Fees', you MUST include this exact phrase in your response: 'Main aapki help kar sakta hoon! Kya aap apna Phone Number aur Course share karenge? Humari team aapko contact kar legi.'
+    PYQ RULE: 
+    - If a user asks for PYQs, Question Papers, or Solutions, tell them you have a repository from 2019 to 2025.
+    - Give them this link: ${pyqsIndex.pyq_repository.link}
+    - If they ask to 'solve' a paper, acknowledge you have it (e.g., "Bhai, 2023 ka BCA paper mere paas hai!"), but since you can't read the PDF directly, ask them to paste the question text. Then solve it expertly.
+    
+    LEAD CAPTURE RULE: If a user asks about 'Admission' or 'Fees', you MUST include: 'Main aapki help kar sakta hoon! Kya aap apna Phone Number aur Course share karenge? Humari team aapko contact kar legi.'
 
     WEB CONTEXT: ${searchContext}`;
 

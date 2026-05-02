@@ -1,0 +1,38 @@
+{
+  "pyq_repository": {
+    "link": "https://drive.google.com/drive/u/0/mobile/folders/1pRpVF6vs7-EFgUBcVXgcxmHswz1MeM7a?usp=sharing",
+    "years": {
+      "2019": {
+        "exams": ["End-Term", "Mid-Term"],
+        "semesters": ["Even", "Odd"],
+        "courses": ["B.Tech (CS, CE, ECE, ME)", "BCA", "B.Sc(IT)", "B.Com", "BBA", "B.Sc(AG)", "B Pharma", "MBA", "MCA", "M.Tech(CS)", "Diploma"]
+      },
+      "2021": {
+        "exams": ["End-Term", "Mid-Term"],
+        "semesters": ["Even", "Odd"],
+        "courses": ["B.Tech", "BCA", "B.Sc(IT)", "B.Com", "B.Sc(AG)", "MBA", "MCA"]
+      },
+      "2022": {
+        "exams": ["Mid-Term", "End-Term"],
+        "semesters": ["Even", "Odd"],
+        "courses": ["B.Tech", "BCA", "B.Com", "B.Sc(AG)", "B.Sc(Nursing)", "MBA", "MCA"]
+      },
+      "2023": {
+        "exams": ["End-Term (Dec)", "Mid-Term (Oct)"],
+        "semesters": ["Even", "Odd"],
+        "courses": ["B.Tech", "BCA", "B.Com", "B.Sc(AG)", "MBA", "MCA"]
+      },
+      "2024": {
+        "exams": ["End-Term", "Mid-Term"],
+        "semesters": ["Even", "Odd"],
+        "courses": ["B.Tech", "BCA", "B.Com", "B.Sc(AG)", "MBA", "MCA"]
+      },
+      "2025": {
+        "exams": ["End-Term (June/Dec)", "Mid-Term (March/Sept)"],
+        "semesters": ["Even", "Odd"],
+        "courses": ["B.Tech", "BCA", "BCA AI & DS", "B.Com (H)", "BBA", "B.Sc. Nursing", "MBA", "MCA", "M.Tech", "Diploma CSE"],
+        "semesters_available": ["2nd Sem", "4th Sem", "6th Sem"]
+      }
+    }
+  }
+}

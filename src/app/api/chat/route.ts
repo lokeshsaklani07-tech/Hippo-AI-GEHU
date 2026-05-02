@@ -51,6 +51,8 @@ export async function POST(req: Request) {
       } catch (e) { console.error("Search error", e); }
     }
 
+    const lang = isHinglish(lastMessage) ? "hi" : "en";
+
     // 2. Memory & Learning (Local Persistence)
     // Save conversation to backend for 'learning'
     const fs = require('fs');
@@ -107,7 +109,6 @@ export async function POST(req: Request) {
     - Answer in Hinglish. Use campus terms like "bhai", "scam", "lit", "sorted".
     ${baseContext}`;
 
-    const lang = isHinglish(lastMessage) ? "hi" : "en";
     const systemInstruction = lang === "hi" ? systemInstructionHi : systemInstructionEn;
 
     // Extract potential leads

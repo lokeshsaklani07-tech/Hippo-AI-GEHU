@@ -53,39 +53,36 @@ export async function POST(req: Request) {
 
     const lang = isHinglish(lastMessage) ? "hi" : "en";
 
-    // 2. Multi-Source Knowledge Injection (RAG-lite)
+    // 1. Data Logging (Memory for Learning)
+    const fs = require('fs');
+    const path = require('path');
+    const historyDir = path.join(process.cwd(), 'data', 'history');
+    if (!fs.existsSync(historyDir)) fs.mkdirSync(historyDir, { recursive: true });
+    fs.appendFileSync(path.join(historyDir, 'user_interactions.jsonl'), JSON.stringify({
+      t: new Date().toISOString(),
+      q: lastMessage,
+      l: lang
+    }) + '\n');
+
+    // 2. Optimized Knowledge Base
     const baseContext = `
-    KNOWLEDGE BASES:
-    1. GEHU OFFICIAL FAQ: ${JSON.stringify(gehuFaq)}
-    2. COLLEGE DATA: ${JSON.stringify(collegeData)}
-    3. PYQs REPOSITORY (Drive): ${JSON.stringify(pyqsIndex)}
-    4. BOT RESPONSES: ${JSON.stringify(botResponses)}
+    KNOWLEDGE:
+    - FAQ: ${JSON.stringify(gehuFaq).slice(0, 1000)}...
+    - COLLEGE: ${JSON.stringify(collegeData)}
+    - PYQs (2019-25): ${pyqsIndex.pyq_repository.link}
+    - INTENTS: ${JSON.stringify(botResponses)}
 
-    PYQ RULE: 
-    - If a user asks for PYQs, Question Papers, or Solutions, tell them you have a repository from 2019 to 2025.
-    - Give them this link: ${pyqsIndex.pyq_repository.link}
-    
-    LEAD CAPTURE RULE: If a user asks about 'Admission' or 'Fees', you MUST include: 'Main aapki help kar sakta hoon! Kya aap apna Phone Number aur Course share karenge? Humari team aapko contact kar legi.'
+    RULES:
+    - For Admission/Fees: Ask for Phone & Course to contact.
+    - Keep replies very short and fast. 
+    - You are a helpful GEHU Gen-Z assistant.`;
 
-    WEB CONTEXT: ${searchContext}`;
-
-    const systemInstructionEn = `You are a Gen-Z student-assistant for Graphic Era Hill University (GEHU).
-    Speak casually and keep answers short, friendly and to-the-point.
-    
-    Language rule: 
-    - The user wrote in English, so you MUST answer ONLY in English. Never mix English and Hindi.
-    - Keep it crisp (e.g., "The scholarship is 10% for female candidates").
-    - Use emojis sparingly (👍, 🙌).
+    const systemInstructionEn = `You are Hippo (GEHU Assistant). 
+    Speak crisp English. Be fast.
     ${baseContext}`;
 
-    const systemInstructionHi = `You are a Gen-Z student-assistant for Graphic Era Hill University (GEHU).
-    Speak casually and keep answers short, friendly and to-the-point.
-    
-    Language rule: 
-    - The user wrote in Hinglish, so you MUST answer in Hinglish.
-    - Sprinkle "bhai", "yaar", "kaise" etc. Use campus-specific terms ("semester-waale", "batch").
-    - Keep the same vibe (e.g., "Scholarship ke liye 10% female candidates ko milta hai").
-    - Use emojis sparingly (👍, 🙌).
+    const systemInstructionHi = `You are Hippo (GEHU Assistant). 
+    Speak Hinglish. Be fast. Use "bhai", "yaar".
     ${baseContext}`;
 
     const systemInstruction = lang === "hi" ? systemInstructionHi : systemInstructionEn;

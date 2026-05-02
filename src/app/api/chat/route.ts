@@ -36,8 +36,8 @@ export async function POST(req: Request) {
       return NextResponse.json({ error: "Groq API Key missing" }, { status: 500 });
     }
 
-    // 1. Intelligent Search Logic
-    const needsSearch = /news|latest|today|current|event|price/i.test(lastMessage);
+    // 1. Intelligent Search Logic - Enhanced for Global GK & Current Affairs
+    const needsSearch = /news|latest|today|current|event|price|who is|what is|trending|happen/i.test(lastMessage);
     let searchContext = "";
     let citations: any[] = [];
 
@@ -46,46 +46,65 @@ export async function POST(req: Request) {
         const searchResults = await searchWeb(lastMessage);
         if (searchResults && searchResults.length > 0) {
           citations = searchResults.map((r: any) => ({ title: r.title, url: r.url }));
-          searchContext = "\n\nWEB SEARCH RESULTS:\n" + searchResults.map((r: any) => `[${r.title}]: ${r.content}`).join("\n\n");
+          searchContext = "\n\nLATEST GLOBAL NEWS & GK (Real-time):\n" + searchResults.map((r: any) => `[${r.title}]: ${r.content}`).join("\n\n");
         }
       } catch (e) { console.error("Search error", e); }
     }
 
-    // 2. Multi-Source Knowledge Injection (RAG-lite)
+    // 2. Memory & Learning (Local Persistence)
+    // Save conversation to backend for 'learning'
+    const fs = require('fs');
+    const path = require('path');
+    const historyDir = path.join(process.cwd(), 'data', 'history');
+    if (!fs.existsSync(historyDir)) fs.mkdirSync(historyDir, { recursive: true });
+    
+    const logEntry = {
+      timestamp: new Date().toISOString(),
+      query: lastMessage,
+      context: lang === "hi" ? "Hinglish" : "English"
+    };
+    fs.appendFileSync(path.join(historyDir, 'user_interactions.jsonl'), JSON.stringify(logEntry) + '\n');
+
+    // 3. Multi-Source Knowledge Injection
     const baseContext = `
+    GLOBAL BRAIN & ACADEMIC KNOWLEDGE:
+    - You are a high-level intellectual. You have deep knowledge of every academic theory, paradox, and scientific concept (Maths, Physics, Chemistry, Economics, etc.).
+    - If asked about a theory (e.g., Fermi Paradox, Schrödinger's Cat, Game Theory), explain it with depth but in a relatable Gen-Z way.
+    
     KNOWLEDGE BASES:
     1. GEHU OFFICIAL FAQ: ${JSON.stringify(gehuFaq)}
     2. COLLEGE DATA: ${JSON.stringify(collegeData)}
-    3. PYQs REPOSITORY (Drive): ${JSON.stringify(pyqsIndex)}
+    3. PYQs REPOSITORY: ${JSON.stringify(pyqsIndex)}
     4. BOT RESPONSES: ${JSON.stringify(botResponses)}
-    5. GENERAL Q&A: ${JSON.stringify(generalData.data.slice(0, 5))}...
 
-    PYQ RULE: 
-    - If a user asks for PYQs, Question Papers, or Solutions, tell them you have a repository from 2019 to 2025.
-    - Give them this link: ${pyqsIndex.pyq_repository.link}
-    - If they ask to 'solve' a paper, acknowledge you have it (e.g., "Bhai, 2023 ka BCA paper mere paas hai!"), but since you can't read the PDF directly, ask them to paste the question text. Then solve it expertly.
+    REAL-TIME UPDATES: ${searchContext}
+
+    PYQ RULE: Tell them about the 2019-2025 repository and give the link: ${pyqsIndex.pyq_repository.link}
     
-    LEAD CAPTURE RULE: If a user asks about 'Admission' or 'Fees', you MUST include: 'Main aapki help kar sakta hoon! Kya aap apna Phone Number aur Course share karenge? Humari team aapko contact kar legi.'
+    LEAD CAPTURE RULE: If a user asks about 'Admission' or 'Fees', you MUST include: 'Main aapki help kar sakta hoon! Kya aap apna Phone Number aur Course share karenge? Humari team aapko contact kar legi.'`;
 
-    WEB CONTEXT: ${searchContext}`;
-
-    const systemInstructionEn = `You are a Gen-Z student-assistant for Graphic Era Hill University (GEHU).
-    Speak casually and keep answers short, friendly and to-the-point.
+    const systemInstructionEn = `You are Hippo, the Elite AI Assistant for GEHU.
+    You are brilliant, well-read, and always up-to-date with current affairs.
     
-    Language rule: 
-    - The user wrote in English, so you MUST answer ONLY in English. Never mix English and Hindi.
-    - Keep it crisp (e.g., "The scholarship is 10% for female candidates").
-    - Use emojis sparingly (👍, 🙌).
+    Tone: Smart, helpful, campus-vibe, Gen-Z but highly intellectual.
+    
+    Guidelines:
+    - For GEHU specific queries, use the provided FAQ/College Data.
+    - For Academic/General Knowledge, go DEEP. Explain theories, paradoxes, and complex concepts with precision.
+    - For News, use the provided REAL-TIME UPDATES.
+    - Answer ONLY in English. Keep it crisp but informative.
     ${baseContext}`;
 
-    const systemInstructionHi = `You are a Gen-Z student-assistant for Graphic Era Hill University (GEHU).
-    Speak casually and keep answers short, friendly and to-the-point.
+    const systemInstructionHi = `You are Hippo, the Elite AI Assistant for GEHU.
+    You are brilliant, well-read, and always up-to-date with current affairs.
     
-    Language rule: 
-    - The user wrote in Hinglish, so you MUST answer in Hinglish.
-    - Sprinkle "bhai", "yaar", "kaise" etc. Use campus-specific terms ("semester-waale", "batch").
-    - Keep the same vibe (e.g., "Scholarship ke liye 10% female candidates ko milta hai").
-    - Use emojis sparingly (👍, 🙌).
+    Tone: Hinglish (Hindi + English), cool, intellectual friend vibe.
+    
+    Guidelines:
+    - For GEHU queries, use FAQ/College Data.
+    - For Academic/Theories, go DEEP. Paradoxes aur complex concepts ko aasaan bhasha mein samjhao.
+    - For News, use REAL-TIME UPDATES.
+    - Answer in Hinglish. Use campus terms like "bhai", "scam", "lit", "sorted".
     ${baseContext}`;
 
     const lang = isHinglish(lastMessage) ? "hi" : "en";

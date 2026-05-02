@@ -1,0 +1,31 @@
+{
+  "title": "Curated Hinglish Dataset for Deep Learning-Based Misogyny Detection",
+  "authors": [
+    "Deepti Negi (Corresponding Author, dnegi@gehu.ac.in)",
+    "Himani Maheshwari",
+    "Chandrakala Arya",
+    "Umesh Chandra",
+    "Gaurav Shukla"
+  ],
+  "affiliation": "School of Computing, Graphic Era Hill University (GEHU), Dehradun",
+  "published_accepted_date": "January 25, 2026",
+  "dataset_size": 17234,
+  "sources": ["Facebook", "Twitter", "YouTube", "Reddit"],
+  "labels": {
+    "0": "Non-misogynistic",
+    "1": "Misogynistic"
+  },
+  "best_model": {
+    "name": "Fine-tuned BERT",
+    "accuracy": 0.9205,
+    "precision": 0.9213,
+    "recall": 0.9238,
+    "f1_score": 0.9227
+  },
+  "key_findings": [
+    "Fine-tuned BERT outperformed BiLSTM, CNN, and traditional ML models (Logistic Regression, SVM, Random Forest).",
+    "Hinglish code-mixed text presents challenges like inconsistent spellings, sarcasm, and cultural expressions.",
+    "Misogyny detection in code-mixed languages is crucial for online safety in multilingual societies like India."
+  ],
+  "abstract_snippet": "This study focuses on developing a dataset containing 17,234 Hindi-English code-mixed comments from multiple social media platforms, annotated manually. Fine-tuned BERT achieved the highest 0.92 accuracy."
+}

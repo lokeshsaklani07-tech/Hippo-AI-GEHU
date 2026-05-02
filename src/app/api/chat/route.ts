@@ -6,6 +6,7 @@ import generalData from "@/lib/general_data.json";
 import gehuFaq from "@/lib/gehu_faq.json";
 import botResponses from "@/lib/bot_responses.json";
 import pyqsIndex from "@/lib/pyqs_index.json";
+import misogynyResearch from "@/lib/misogyny_research.json";
 
 const DEVANAGARI_RE = /[\u0900-\u097F]/;
 const HINDI_KEYWORDS = new Set([
@@ -59,6 +60,7 @@ export async function POST(req: Request) {
     - FAQ: ${JSON.stringify(gehuFaq).slice(0, 1000)}...
     - COLLEGE: ${JSON.stringify(collegeData)}
     - PYQs (2019-25): ${pyqsIndex.pyq_repository.link}
+    - GEHU RESEARCH: ${misogynyResearch.title} by Deepti Negi et al. (Dataset: 17k+ Hinglish comments, 92% accuracy).
     - INTENTS: ${JSON.stringify(botResponses)}
 
     RULES:

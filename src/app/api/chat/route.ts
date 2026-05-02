@@ -48,8 +48,22 @@ export async function POST(req: Request) {
 
     RULE: Use the FAQ, College Data, and Bot Responses first for high accuracy on admissions, contacts, courses, fees, etc. 
     If you use the internet search, cite your source naturally. Be the smart friend who explains simply.
+    LEAD CAPTURE RULE: If a user asks about 'Admission' or 'Fees', you MUST include this exact phrase in your response: 'Main aapki help kar sakta hoon! Kya aap apna Phone Number aur Course share karenge? Humari team aapko contact kar legi.'
 
     WEB CONTEXT: ${searchContext}`;
+
+    // Extract potential leads
+    const phoneRegex = /\b\d{10}\b/;
+    if (phoneRegex.test(lastMessage)) {
+      const fs = require('fs');
+      const path = require('path');
+      const leadEntry = `"${new Date().toISOString()}", "${lastMessage.replace(/"/g, '""')}"\n`;
+      try {
+        fs.appendFileSync(path.join(process.cwd(), 'leads.csv'), leadEntry);
+      } catch (e) {
+        console.error("Failed to save lead", e);
+      }
+    }
 
     const chatCompletion = await groq.chat.completions.create({
       messages: [

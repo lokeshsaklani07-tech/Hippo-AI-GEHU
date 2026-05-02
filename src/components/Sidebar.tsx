@@ -2,21 +2,21 @@
 
 import { cn } from "@/lib/utils";
 import { 
-  Home, 
+  Key, 
+  FileEdit, 
   BookOpen, 
-  Calendar, 
-  ExternalLink, 
-  GraduationCap, 
-  Info,
-  Layers
+  CreditCard, 
+  Phone,
+  ExternalLink,
+  Info
 } from "lucide-react";
 
 const links = [
-  { name: "GEHU ERP", url: "https://erp.gehu.ac.in/", icon: Layers },
-  { name: "Official Website", url: "https://www.gehu.ac.in/", icon: Home },
-  { name: "Examination Portal", url: "https://www.gehu.ac.in/content/gehu/en/examination.html", icon: BookOpen },
-  { name: "Academic Calendar", url: "https://www.gehu.ac.in/content/gehu/en/academic-calendar.html", icon: Calendar },
-  { name: "Placements", url: "https://www.gehu.ac.in/content/gehu/en/placements.html", icon: GraduationCap },
+  { name: "Student ERP", url: "https://erp.gehu.ac.in/", icon: Key, subtext: "" },
+  { name: "Exam Portal", url: "https://gehu.ac.in/dehradun/exam-portal/", icon: FileEdit, subtext: "" },
+  { name: "Library Info", url: "#", icon: BookOpen, subtext: "Reading Area: 8 AM - 11 PM" },
+  { name: "Fee Payment", url: "https://gehu.ac.in/", icon: CreditCard, subtext: "Online Application/Fee Portal" },
+  { name: "Contact Support", url: "tel:18002701280", icon: Phone, subtext: "Toll-Free: 1800 270 1280" },
 ];
 
 export function Sidebar() {
@@ -40,9 +40,12 @@ export function Sidebar() {
               rel="noopener noreferrer"
               className="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-white/5 border border-transparent hover:border-white/10 transition-all group"
             >
-              <link.icon className="w-5 h-5 text-hippo-primary group-hover:scale-110 transition-transform" />
-              <span className="text-sm font-medium text-white/70 group-hover:text-white">{link.name}</span>
-              <ExternalLink className="w-3 h-3 ml-auto opacity-0 group-hover:opacity-100 transition-opacity" />
+              <link.icon className="w-5 h-5 text-hippo-primary group-hover:scale-110 transition-transform shrink-0" />
+              <div className="flex flex-col">
+                <span className="text-sm font-medium text-white/70 group-hover:text-white leading-tight">{link.name}</span>
+                {link.subtext && <span className="text-[10px] text-white/40 mt-1">{link.subtext}</span>}
+              </div>
+              {!link.subtext && <ExternalLink className="w-3 h-3 ml-auto opacity-0 group-hover:opacity-100 transition-opacity" />}
             </a>
           ))}
         </nav>

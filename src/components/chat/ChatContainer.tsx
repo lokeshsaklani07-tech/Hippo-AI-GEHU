@@ -2,7 +2,7 @@
 
 import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Send, User, Bot, Globe, ExternalLink } from "lucide-react";
+import { Send, User, Bot, Globe, ExternalLink, Bell } from "lucide-react";
 import ReactMarkdown from "react-markdown";
 import { cn } from "@/lib/utils";
 
@@ -21,6 +21,7 @@ export function ChatContainer() {
   ]);
   const [input, setInput] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+  const [alertText, setAlertText] = useState("");
   const scrollRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -28,6 +29,24 @@ export function ChatContainer() {
       scrollRef.current.scrollTop = scrollRef.current.scrollHeight;
     }
   }, [messages]);
+
+  useEffect(() => {
+    // Fetch live alerts
+    const fetchAlerts = async () => {
+      try {
+        const res = await fetch("/api/alerts");
+        const data = await res.json();
+        if (data.hasAlert) {
+          setAlertText(data.alert);
+        }
+      } catch (e) {
+        console.error("Failed to fetch alerts", e);
+      }
+    };
+    fetchAlerts();
+    const interval = setInterval(fetchAlerts, 10000); // check every 10s
+    return () => clearInterval(interval);
+  }, []);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -73,6 +92,22 @@ export function ChatContainer() {
             isLoading && "animate-ping"
           )} />
           <span className="text-sm font-medium tracking-widest text-white/60">SYSTEM STATUS: ACTIVE</span>
+        </div>
+        
+        {/* Notification Bell */}
+        <div className="relative group flex items-center">
+          <div className={cn(
+            "p-2 rounded-full transition-all duration-500",
+            alertText ? "bg-red-500/20 text-red-400 shadow-[0_0_15px_rgba(239,68,68,0.5)]" : "bg-white/5 text-white/40"
+          )}>
+            <Bell className={cn("w-5 h-5", alertText && "animate-pulse")} />
+          </div>
+          {alertText && (
+            <div className="absolute right-0 top-full mt-2 w-64 p-3 rounded-xl glass-card border border-red-500/30 text-xs text-white/90 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-50">
+              <span className="font-bold text-red-400 mb-1 block">LIVE EXAM ALERT</span>
+              {alertText}
+            </div>
+          )}
         </div>
       </header>
 

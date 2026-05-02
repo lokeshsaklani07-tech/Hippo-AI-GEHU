@@ -53,21 +53,7 @@ export async function POST(req: Request) {
 
     const lang = isHinglish(lastMessage) ? "hi" : "en";
 
-    // 2. Memory & Learning (Local Persistence)
-    // Save conversation to backend for 'learning'
-    const fs = require('fs');
-    const path = require('path');
-    const historyDir = path.join(process.cwd(), 'data', 'history');
-    if (!fs.existsSync(historyDir)) fs.mkdirSync(historyDir, { recursive: true });
-    
-    const logEntry = {
-      timestamp: new Date().toISOString(),
-      query: lastMessage,
-      context: lang === "hi" ? "Hinglish" : "English"
-    };
-    fs.appendFileSync(path.join(historyDir, 'user_interactions.jsonl'), JSON.stringify(logEntry) + '\n');
-
-    // 3. Multi-Source Knowledge Injection
+    // 2. Multi-Source Knowledge Injection
     const baseContext = `
     GLOBAL BRAIN & ACADEMIC KNOWLEDGE:
     - You are a high-level intellectual. You have deep knowledge of every academic theory, paradox, and scientific concept (Maths, Physics, Chemistry, Economics, etc.).

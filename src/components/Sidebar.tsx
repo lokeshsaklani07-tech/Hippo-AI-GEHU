@@ -19,7 +19,7 @@ const links = [
   { name: "Student ERP", url: "https://erp.gehu.ac.in/", icon: Key, subtext: "" },
   { name: "PYQs Repository", url: "https://drive.google.com/drive/u/0/mobile/folders/1pRpVF6vs7-EFgUBcVXgcxmHswz1MeM7a?usp=sharing", icon: Library, subtext: "Previous Year Questions" },
   { name: "Exam Portal", url: "https://gehu.ac.in/dehradun/exam-portal/", icon: FileEdit, subtext: "" },
-  { name: "Library Info", url: "#", icon: BookOpen, subtext: "Reading Area: 8 AM - 11 PM" },
+  { name: "eBooks", url: "https://www.junkybooks.com", icon: BookOpen, subtext: "Free eBook Downloads" },
   { name: "Fee Payment", url: "https://gehu.ac.in/", icon: CreditCard, subtext: "Online Application/Fee Portal" },
   { name: "Contact Support", url: "tel:18002701280", icon: Phone, subtext: "Toll-Free: 1800 270 1280" },
 ];

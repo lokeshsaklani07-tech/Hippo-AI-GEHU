@@ -1,66 +1,80 @@
 {
   "university": {
     "name": "Graphic Era Hill University (GEHU)",
-    "campuses": ["Dehradun (Main)", "Bhimtal", "Haldwani"],
+    "campuses": {
+      "dehradun": {
+        "location": "Bell Road, Clement Town, Dehradun, Uttarakhand 248002",
+        "description": "Nestled between Rajaji National Park and Clement Town Cantonment"
+      },
+      "bhimtal": {
+        "location": "SatTal Road, Bhimtal, Nainital, Uttarakhand 263136",
+        "features": ["Serene environment", "Open Air Theatre"]
+      },
+      "haldwani": {
+        "location": "Tularampur, Bareilly Road, Haldwani-263139 (Nainital)",
+        "features": ["Urban commercial market", "Amphitheater"]
+      }
+    },
     "founded": 2011,
-    "location": "Bell Road, Clement Town, Dehradun, Uttarakhand 248002",
-    "accreditations": "NAAC A+, UGC 2(f), AICTE Approved",
-    "rankings": {
-      "NIRF 2022": "Engg #64, Management #65, University #74",
-      "THE World": "Band 601-800"
-    }
+    "established": 1993,
+    "parent": "Graphic Era Educational Society (GEES)",
+    "type": "Private University",
+    "leadership": {
+      "founder": "Prof. (Dr.) Kamal Ghanshala",
+      "director": "Col. Anil Kumar Nair (Retd.)"
+    },
+    "vision": "To be an internationally recognized, inquiry-driven, ethically engaged university.",
+    "mission": "To promote learning in true spirit, offering knowledge and skills needed to succeed."
   },
-  "admission": {
-    "process": ["Choose Course", "Online Application", "Upload Docs", "Pay Fee ₹1500", "Merit Selection"],
-    "scholarships": {
-      "merit": "Up to 70% based on scores",
-      "female": "10% additional",
-      "defence": "5% for wards",
-      "domicile": "25% for Uttarakhand students",
-      "GECET": "Entrance test with up to ₹100Cr in scholarships"
-    }
+  "accreditations_rankings": {
+    "grades": ["NAAC A+", "UGC 2(f)", "AICTE Approved"],
+    "nba_programs": ["CSE", "EE", "Civil", "ECE", "Mechanical", "Biotechnology", "MBA"],
+    "nirf_2022": { "Engineering": 64, "Management": 65, "University": 74 },
+    "the_world_2022": "Rank Band 601-800"
   },
-  "placement_2024_25": {
-    "offers": "2300+",
-    "highest": "₹61.99 LPA",
-    "average": "₹5 LPA+",
-    "top_recruiters": ["Amazon", "Adobe", "Microsoft", "Google", "Infosys", "PayPal", "Genpact"]
-  },
+  "milestones": [
+    { "year": 1993, "event": "Started as Computer Center" },
+    { "year": 2008, "event": "Deemed University status" },
+    { "year": 2011, "event": "GEHU Establishment" },
+    { "year": 2022, "event": "NAAC A+ Grade" }
+  ],
+  "facilities": [
+    "Smart Boards", "Labs", "Digital Library", "Sports & Gym", "Hostels", 
+    "Cafeterias & Food Trucks", "Wi-Fi", "Radio Station", "Medical Services",
+    "Ubuntu & Mac Labs", "Moot Court", "Agriculture Labs"
+  ],
   "departments": [
     "Agriculture", "Allied Sciences", "Animation", "BFSI", "Chemistry", "Civil", "Commerce", 
     "CS & IT", "Design", "ECE", "Fashion", "Law", "Management", "Mechanical", "Media", "Pharmacy"
   ],
   "courses": {
-    "BTech": ["CSE (Hons in AI/ML, Cyber Security)", "Civil", "ECE", "Mechanical", "AI & Data Science"],
-    "Management": ["BBA (Hons, Digital Marketing, AI/DS)", "MBA (AI/DS, Analytics, HR, Finance)"],
-    "Computer_App": ["BCA (Hons in Cyber Security, AI/ML)", "MCA"],
-    "Design": ["B.Des (UI/UX, Product, Interior, Animation)", "B.Sc Animation"],
-    "Others": ["B.Com (Hons CPA)", "LLB", "BA LLB", "B.Sc Agriculture", "B.Pharm"]
+    "Undergraduate": ["B.Des", "B.Sc Animation", "B.Com (Hons)", "B.Tech (GIS/CM)", "BCA (Cyber Security)"],
+    "Postgraduate": ["MBA (AI/DS, HR, Marketing, Finance)", "MCA"],
+    "BTech_Specializations": ["CSE (Cybersecurity, ML & AI)", "AI & Data Science"],
+    "Management": ["BBA (Airport, Hons, E-commerce, Entrepreneurship, AI/DS)", "MBA"]
   },
-  "fees_estimate": {
-    "BTech": "₹2.3 - 2.5 Lakh/year",
-    "BCA": "₹1.4 - 1.7 Lakh/year",
-    "BBA": "₹1.2 - 1.5 Lakh/year",
-    "MBA": "₹2.2 - 2.5 Lakh/year",
-    "MCA": "₹2.0 - 2.2 Lakh/year"
+  "admission": {
+    "fee": "₹1500",
+    "process": ["Choose Course", "Online Application", "Upload Docs", "Merit Selection", "Pay Fee"],
+    "scholarships": {
+      "merit": "Up to 70%",
+      "female": "10% additional",
+      "defence": "5%",
+      "domicile": "25% for Uttarakhand"
+    },
+    "GECET": "Entrance test with up to ₹100Cr in scholarships"
   },
-  "facilities": [
-    "Smart Classrooms", "Mac/Ubuntu Labs", "Moot Court", "Radio Station", "Gym", 
-    "Hostels (Boys/Girls)", "Food Trucks", "Medical Services", "Sports Complex"
-  ],
+  "placements": {
+    "year": "2024-25",
+    "offers": "2300+",
+    "highest": "₹61.99 LPA",
+    "average": "₹5 LPA+",
+    "top_recruiters": ["Amazon", "Adobe", "Microsoft", "Google", "Infosys", "PayPal", "Genpact"]
+  },
   "contact": {
-    "toll_free": ["1800 890 6027", "1800 270 1280"],
+    "numbers": ["1800 890 6027", "1800 270 1280"],
     "whatsapp": "+91 9520986896",
     "email": "admissions@gehu.ac.in",
     "hours": "8 AM - 8 PM (All days)"
-  },
-  "rules": {
-    "uniform": "Mon/Thu: Formal, Tue-Fri: Semi-formal, Sat: Informal"
-  },
-  "faqs": [
-    {"q": "Admission process?", "a": "Online merit-based application via website."},
-    {"q": "Total programs?", "a": "85+ UG, PG, and Doctoral courses."},
-    {"q": "Hostel apply?", "a": "Available for both boys and girls. Apply via Admission portal."},
-    {"q": "Placement stats?", "a": "2300+ offers this year, highest ₹61.99 LPA."}
-  ]
+  }
 }

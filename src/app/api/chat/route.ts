@@ -5,6 +5,7 @@ import gehuData from "@/lib/gehu_data.json";
 import generalData from "@/lib/general_data.json";
 import pyqsIndex from "@/lib/pyqs_index.json";
 import misogynyResearch from "@/lib/misogyny_research.json";
+import gehuFaculty from "@/lib/gehu_faculty.json";
 
 const DEVANAGARI_RE = /[\u0900-\u097F]/;
 const HINDI_KEYWORDS = new Set([
@@ -52,10 +53,14 @@ export async function POST(req: Request) {
 
     const lang = isHinglish(lastMessage) ? "hi" : "en";
 
-    // 2. Optimized Knowledge Base
+    // 2. Conditional Faculty Loading (to save context tokens)
+    const isFacultyQuery = /faculty|teacher|professor|hod|sir|mam|department|dean|director/i.test(lastMessage);
+    const facultyContext = isFacultyQuery ? `\n- FACULTY_DATA: ${JSON.stringify(gehuFaculty)}` : "";
+
+    // 3. Optimized Knowledge Base
     const baseContext = `
     KNOWLEDGE:
-    - GEHU_INFO: ${JSON.stringify(gehuData)}
+    - GEHU_INFO: ${JSON.stringify(gehuData)}${facultyContext}
     - PYQs_LINK: ${pyqsIndex.pyq_repository.link}
     - RESEARCH: ${misogynyResearch.title} (Accuracy: 92%).
     - GREETINGS: ${JSON.stringify(generalData)}
@@ -64,6 +69,7 @@ export async function POST(req: Request) {
     - You are Hippo, GEHU's Gen-Z AI assistant.
     - If user asks for fees, use the fees_estimate in knowledge.
     - If user asks for placement, use placement_2024_25.
+    - For Faculty/HOD: Provide names and roles from FACULTY_DATA.
     - For Admission/Contact: Provide Toll-free/Whatsapp.
     - Be crisp, fast, and friendly. 
     - Use Hinglish if lang is 'hi' (use bhai, yaar, scene, set).`;

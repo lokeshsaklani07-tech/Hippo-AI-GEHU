@@ -1,10 +1,8 @@
 import Groq from "groq-sdk";
 import { searchWeb } from "@/lib/tavily";
 import { NextResponse } from "next/server";
-import collegeData from "@/lib/college_data.json";
+import gehuData from "@/lib/gehu_data.json";
 import generalData from "@/lib/general_data.json";
-import gehuFaq from "@/lib/gehu_faq.json";
-import botResponses from "@/lib/bot_responses.json";
 import pyqsIndex from "@/lib/pyqs_index.json";
 import misogynyResearch from "@/lib/misogyny_research.json";
 
@@ -57,26 +55,24 @@ export async function POST(req: Request) {
     // 2. Optimized Knowledge Base
     const baseContext = `
     KNOWLEDGE:
-    - FAQ: ${JSON.stringify(gehuFaq).slice(0, 1000)}...
-    - COLLEGE: ${JSON.stringify(collegeData)}
-    - PYQs (2019-25): ${pyqsIndex.pyq_repository.link}
-    - GEHU RESEARCH: ${misogynyResearch.title} by Deepti Negi et al. (Dataset: 17k+ Hinglish comments, 92% accuracy).
-    - INTENTS: ${JSON.stringify(botResponses)}
+    - GEHU_INFO: ${JSON.stringify(gehuData)}
+    - PYQs_LINK: ${pyqsIndex.pyq_repository.link}
+    - RESEARCH: ${misogynyResearch.title} (Accuracy: 92%).
+    - GREETINGS: ${JSON.stringify(generalData)}
 
     RULES:
-    - For Admission/Fees: Ask for Phone & Course to contact.
-    - Keep replies very short and fast. 
-    - You are a helpful GEHU Gen-Z assistant.`;
+    - You are Hippo, GEHU's Gen-Z AI assistant.
+    - If user asks for fees, use the fees_estimate in knowledge.
+    - If user asks for placement, use placement_2024_25.
+    - For Admission/Contact: Provide Toll-free/Whatsapp.
+    - Be crisp, fast, and friendly. 
+    - Use Hinglish if lang is 'hi' (use bhai, yaar, scene, set).`;
 
-    const systemInstructionEn = `You are Hippo (GEHU Assistant). 
-    Speak crisp English. Be fast.
-    ${baseContext}`;
-
-    const systemInstructionHi = `You are Hippo (GEHU Assistant). 
-    Speak Hinglish. Be fast. Use "bhai", "yaar".
-    ${baseContext}`;
-
-    const systemInstruction = lang === "hi" ? systemInstructionHi : systemInstructionEn;
+    const systemInstruction = `You are Hippo (GEHU Assistant). 
+    Mode: ${lang === "hi" ? "Hinglish" : "English"}.
+    ${baseContext}
+    
+    ${searchContext}`;
 
     // Extract potential leads
     const phoneRegex = /\b\d{10}\b/;
@@ -98,13 +94,13 @@ export async function POST(req: Request) {
       ],
       model: "llama-3.1-8b-instant",
       temperature: 0.7,
-      max_tokens: 1500,
+      max_tokens: 1000,
     });
 
     const text = chatCompletion.choices[0]?.message?.content || "";
 
     return NextResponse.json({ 
-      content: text,
+      content: text, 
       citations: citations 
     });
 
@@ -113,3 +109,4 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: error.message || "Internal Server Error" }, { status: 500 });
   }
 }
+

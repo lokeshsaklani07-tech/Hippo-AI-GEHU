@@ -1,0 +1,66 @@
+{
+  "university": {
+    "name": "Graphic Era Hill University (GEHU)",
+    "campuses": ["Dehradun (Main)", "Bhimtal", "Haldwani"],
+    "founded": 2011,
+    "location": "Bell Road, Clement Town, Dehradun, Uttarakhand 248002",
+    "accreditations": "NAAC A+, UGC 2(f), AICTE Approved",
+    "rankings": {
+      "NIRF 2022": "Engg #64, Management #65, University #74",
+      "THE World": "Band 601-800"
+    }
+  },
+  "admission": {
+    "process": ["Choose Course", "Online Application", "Upload Docs", "Pay Fee ₹1500", "Merit Selection"],
+    "scholarships": {
+      "merit": "Up to 70% based on scores",
+      "female": "10% additional",
+      "defence": "5% for wards",
+      "domicile": "25% for Uttarakhand students",
+      "GECET": "Entrance test with up to ₹100Cr in scholarships"
+    }
+  },
+  "placement_2024_25": {
+    "offers": "2300+",
+    "highest": "₹61.99 LPA",
+    "average": "₹5 LPA+",
+    "top_recruiters": ["Amazon", "Adobe", "Microsoft", "Google", "Infosys", "PayPal", "Genpact"]
+  },
+  "departments": [
+    "Agriculture", "Allied Sciences", "Animation", "BFSI", "Chemistry", "Civil", "Commerce", 
+    "CS & IT", "Design", "ECE", "Fashion", "Law", "Management", "Mechanical", "Media", "Pharmacy"
+  ],
+  "courses": {
+    "BTech": ["CSE (Hons in AI/ML, Cyber Security)", "Civil", "ECE", "Mechanical", "AI & Data Science"],
+    "Management": ["BBA (Hons, Digital Marketing, AI/DS)", "MBA (AI/DS, Analytics, HR, Finance)"],
+    "Computer_App": ["BCA (Hons in Cyber Security, AI/ML)", "MCA"],
+    "Design": ["B.Des (UI/UX, Product, Interior, Animation)", "B.Sc Animation"],
+    "Others": ["B.Com (Hons CPA)", "LLB", "BA LLB", "B.Sc Agriculture", "B.Pharm"]
+  },
+  "fees_estimate": {
+    "BTech": "₹2.3 - 2.5 Lakh/year",
+    "BCA": "₹1.4 - 1.7 Lakh/year",
+    "BBA": "₹1.2 - 1.5 Lakh/year",
+    "MBA": "₹2.2 - 2.5 Lakh/year",
+    "MCA": "₹2.0 - 2.2 Lakh/year"
+  },
+  "facilities": [
+    "Smart Classrooms", "Mac/Ubuntu Labs", "Moot Court", "Radio Station", "Gym", 
+    "Hostels (Boys/Girls)", "Food Trucks", "Medical Services", "Sports Complex"
+  ],
+  "contact": {
+    "toll_free": ["1800 890 6027", "1800 270 1280"],
+    "whatsapp": "+91 9520986896",
+    "email": "admissions@gehu.ac.in",
+    "hours": "8 AM - 8 PM (All days)"
+  },
+  "rules": {
+    "uniform": "Mon/Thu: Formal, Tue-Fri: Semi-formal, Sat: Informal"
+  },
+  "faqs": [
+    {"q": "Admission process?", "a": "Online merit-based application via website."},
+    {"q": "Total programs?", "a": "85+ UG, PG, and Doctoral courses."},
+    {"q": "Hostel apply?", "a": "Available for both boys and girls. Apply via Admission portal."},
+    {"q": "Placement stats?", "a": "2300+ offers this year, highest ₹61.99 LPA."}
+  ]
+}

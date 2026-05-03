@@ -36,8 +36,8 @@ export async function POST(req: Request) {
       return NextResponse.json({ error: "Groq API Key missing" }, { status: 500 });
     }
 
-    // 1. Intelligent Search Logic
-    const needsSearch = /news|latest|today|current|event|price/i.test(lastMessage);
+    // 1. Intelligent Search Logic (Tightened for speed)
+    const needsSearch = /\b(latest news|current events|today's news|live status|breaking)\b/i.test(lastMessage);
     let searchContext = "";
     let citations: any[] = [];
 
@@ -53,32 +53,47 @@ export async function POST(req: Request) {
 
     const lang = isHinglish(lastMessage) ? "hi" : "en";
 
-    // 2. Conditional Faculty Loading (to save context tokens)
-    const isFacultyQuery = /faculty|teacher|professor|hod|sir|mam|department|dean|director/i.test(lastMessage);
-    const facultyContext = isFacultyQuery ? `\n- FACULTY_DATA: ${JSON.stringify(gehuFaculty)}` : "";
+    // 2. Granular Faculty Loading (Save Context & Speed)
+    let facultyContext = "";
+    if (/faculty|teacher|professor|hod|sir|mam|department/i.test(lastMessage)) {
+        // Detect specific department for targeted knowledge
+        const lowerMsg = lastMessage.toLowerCase();
+        if (lowerMsg.includes("cse") || lowerMsg.includes("computer science") || lowerMsg.includes("it")) {
+            facultyContext = `\n- CSE_FACULTY: ${JSON.stringify(gehuFaculty.computer_science_engineering)}`;
+        } else if (lowerMsg.includes("ca") || lowerMsg.includes("computer application") || lowerMsg.includes("bca") || lowerMsg.includes("mca")) {
+            facultyContext = `\n- CA_FACULTY: ${JSON.stringify(gehuFaculty.computer_application)}`;
+        } else if (lowerMsg.includes("management") || lowerMsg.includes("bba") || lowerMsg.includes("mba")) {
+            facultyContext = `\n- MGMT_FACULTY: ${JSON.stringify(gehuFaculty.management)}`;
+        } else if (lowerMsg.includes("civil")) {
+            facultyContext = `\n- CIVIL_FACULTY: ${JSON.stringify(gehuFaculty.civil_engineering)}`;
+        } else if (lowerMsg.includes("mechanical")) {
+            facultyContext = `\n- MECH_FACULTY: ${JSON.stringify(gehuFaculty.mechanical_engineering)}`;
+        } else if (lowerMsg.includes("law")) {
+            facultyContext = `\n- LAW_FACULTY: ${JSON.stringify(gehuFaculty.law)}`;
+        } else {
+            // General faculty query: just list departments
+            facultyContext = `\n- DEPARTMENTS: ${JSON.stringify(gehuData.departments)}`;
+        }
+    }
 
-    // 3. Optimized Knowledge Base
+    // 3. Optimized Knowledge Base (Reduced token bloat)
     const baseContext = `
     KNOWLEDGE:
     - GEHU_INFO: ${JSON.stringify(gehuData)}${facultyContext}
     - PYQs_LINK: ${pyqsIndex.pyq_repository.link}
-    - RESEARCH: ${misogynyResearch.title} (Accuracy: 92%).
     - GREETINGS: ${JSON.stringify(generalData)}
 
     RULES:
     - You are Hippo, GEHU's Gen-Z AI assistant.
-    - If user asks for fees, use the fees_estimate in knowledge.
-    - If user asks for placement, use placement_2024_25.
-    - For Faculty/HOD: Provide names and roles from FACULTY_DATA.
-    - For Admission/Contact: Provide Toll-free/Whatsapp.
-    - Be crisp, fast, and friendly. 
-    - Use Hinglish if lang is 'hi' (use bhai, yaar, scene, set).`;
+    - Keep answers short, punchy, and helpful.
+    - For Faculty: Give Name and Role.
+    - If lang is 'hi', use Hinglish (bhai, scene, set).`;
 
     const systemInstruction = `You are Hippo (GEHU Assistant). 
     Mode: ${lang === "hi" ? "Hinglish" : "English"}.
     ${baseContext}
-    
     ${searchContext}`;
+
 
     // Extract potential leads
     const phoneRegex = /\b\d{10}\b/;

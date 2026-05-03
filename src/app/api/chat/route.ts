@@ -62,25 +62,18 @@ export async function POST(req: Request) {
     KNOWLEDGE:
     - GEHU_INFO: ${JSON.stringify(gehuData)}${facultyContext}
     - PYQs_LINK: ${pyqsIndex.pyq_repository.link}
-    - GREETINGS: ${JSON.stringify(generalData)}
-
+    
     RULES:
     - You are Hippo, GEHU's polite and helpful AI assistant.
-    - CREATOR: If someone asks who created you or who made you, you MUST reply: "It was solely Created by LOKESH SAKLANI and he get the help from the internet".
-    - PERFORMANCE: Be concise and efficient to ensure responses are delivered in under 5 seconds.
-    - LANGUAGE: Always reply in English only. Never use Hindi or Hinglish.
-    - BE RESPECTFUL: Always maintain a respectful and courteous tone. 
-    - ACADEMIC DECORUM: Use respectful titles (Prof., Dr., Mr., Ms.) for all faculty and staff.
-    - HELP STUDENT: Be supportive and professional in your guidance.
-    - Keep answers clear and helpful.`;
+    - CREATOR: If asked who made you or created you, you MUST reply: "It was solely Created by LOKESH SAKLANI and he get the help from the internet".
+    - LANGUAGE: English only. Strictly no Hindi/Hinglish.
+    - BE RESPECTFUL: Always maintain a respectful and courteous tone.
+    - SPEED: Be concise and direct to ensure fast response times.
+    - ACADEMIC DECORUM: Use titles (Prof., Dr., etc.) for faculty.`;
 
     const systemInstruction = `You are Hippo, the respectful and friendly English-speaking AI assistant for Graphic Era Hill University (GEHU). 
-    Your primary goal is to assist students with accuracy and politeness in English.
     ${baseContext}
     ${searchContext}`;
-
-
-
 
     // Extract potential leads
     const phoneRegex = /\b\d{10}\b/;
@@ -95,21 +88,35 @@ export async function POST(req: Request) {
       }
     }
 
-    const chatCompletion = await groq.chat.completions.create({
+    const response = await groq.chat.completions.create({
+      model: "llama-3.1-8b-instant",
       messages: [
         { role: "system", content: systemInstruction },
         ...messages
       ],
-      model: "llama-3.1-8b-instant",
-      temperature: 0.7,
-      max_tokens: 1000,
+      temperature: 0.6,
+      max_tokens: 800,
+      stream: true,
     });
 
-    const text = chatCompletion.choices[0]?.message?.content || "";
+    // Create a streaming response for <5s perceived latency
+    const stream = new ReadableStream({
+      async start(controller) {
+        for await (const chunk of response) {
+          const content = chunk.choices[0]?.delta?.content || "";
+          if (content) {
+            controller.enqueue(new TextEncoder().encode(content));
+          }
+        }
+        controller.close();
+      },
+    });
 
-    return NextResponse.json({ 
-      content: text, 
-      citations: citations 
+    return new Response(stream, {
+      headers: {
+        "Content-Type": "text/plain; charset=utf-8",
+        "X-Citations": JSON.stringify(citations),
+      },
     });
 
   } catch (error: any) {
@@ -117,4 +124,5 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: error.message || "Internal Server Error" }, { status: 500 });
   }
 }
+
 

@@ -66,14 +66,36 @@ export function ChatContainer() {
         }),
       });
 
-      const data = await response.json();
-      
-      if (data.content) {
-        setMessages((prev) => [...prev, { 
-          role: "assistant", 
-          content: data.content,
-          citations: data.citations
-        }]);
+      if (!response.ok) throw new Error("Failed to fetch");
+
+      // Extract citations from custom header
+      const citationsHeader = response.headers.get("X-Citations");
+      const citations = citationsHeader ? JSON.parse(citationsHeader) : [];
+
+      // Create a placeholder for the assistant's response
+      setMessages((prev) => [...prev, { role: "assistant", content: "", citations }]);
+
+      const reader = response.body?.getReader();
+      const decoder = new TextDecoder();
+      let assistantText = "";
+
+      if (reader) {
+        while (true) {
+          const { done, value } = await reader.read();
+          if (done) break;
+          
+          const chunk = decoder.decode(value, { stream: true });
+          assistantText += chunk;
+          
+          setMessages((prev) => {
+            const newMessages = [...prev];
+            const lastMsg = newMessages[newMessages.length - 1];
+            if (lastMsg.role === "assistant") {
+              lastMsg.content = assistantText;
+            }
+            return newMessages;
+          });
+        }
       }
     } catch (error) {
       console.error("Chat error:", error);
@@ -81,6 +103,7 @@ export function ChatContainer() {
       setIsLoading(false);
     }
   };
+
 
   return (
     <div className="flex-1 flex flex-col h-screen relative overflow-hidden">

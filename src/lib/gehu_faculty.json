@@ -6,9 +6,10 @@
       {
         "name": "Prof. Anupam Singh",
         "role": "Head of Department",
-        "edu": "Ph.D (CSE), M.Tech (CSE), B.Tech (IT)",
+        "edu": "Ph.D(Computer Science & Engineering), Dr. APJ Abdul Kalam Technical University, Lucknow (2022); M. Tech. (Computer Science & Engineering), Dr. APJ Abdul Kalam Technical University, Lucknow (2011); B. Tech. (IT), Dr. APJ Abdul Kalam Technical University, Lucknow (2004)",
         "area": "Formal Methods, Healthcare Informatics",
-        "exp": "20 Years"
+        "exp": "20 Years",
+        "ids": "ORCID: 0000-0002-3242-5383, Scopus: 57211625912, Vidwan: 96325"
       },
       { "name": "Dr. Ved Prakash Dubey", "role": "Professor" },
       { "name": "Dr. Mahantesh Pattanshetti", "role": "Professor" },
@@ -19,9 +20,8 @@
       {
         "name": "Dr. Amit Gupta",
         "role": "Associate Professor",
-        "edu": "Ph.D (CSE), M.Tech (CSE)",
         "area": "Machine Learning, Big Data Analysis",
-        "exp": "15+ years"
+        "ids": "ORCID: 0000-0002-3109-4949"
       },
       { "name": "Dr. Ajay Narayan Shukla", "role": "Associate Professor" },
       { "name": "Mr. A. B. Desai", "role": "Associate Professor" },
@@ -46,9 +46,8 @@
       {
         "name": "Mr. Chetan Pandey",
         "role": "Assistant Professor",
-        "edu": "Ph.D (Pursuing), M.Tech (CSE), B.Tech (CSE)",
-        "area": "Data Analysis, Data Security",
-        "exp": "5+ years"
+        "area": "Data (Text, Image) Analysis, Data Security",
+        "ids": "ORCID: 0000-0003-0046-0317"
       },
       { "name": "Ms. Manisha Aeri", "role": "Assistant Professor" },
       { "name": "Mr. Sushant Chamoli", "role": "Assistant Professor" },
@@ -59,9 +58,8 @@
       {
         "name": "Mr. Akash Chauhan",
         "role": "Assistant Professor",
-        "edu": "M.Tech (CSE), B.Tech (CSE)",
-        "area": "Computer Vision, Image Processing",
-        "exp": "4+ years edu, 4+ years industry"
+        "area": "Computer Vision, Image Processing and Video Processing",
+        "ids": "ORCID: 0009-0004-2004-0074"
       },
       { "name": "Ms. Lisa Gopal", "role": "Assistant Professor" },
       { "name": "Ms. Ishita Uniyal", "role": "Assistant Professor" },
@@ -77,9 +75,8 @@
       {
         "name": "Dr. Jyoti Ramola",
         "role": "Assistant Professor",
-        "edu": "Cert (Data Science, ML, IOT), M.Tech (VLSI), B.E (ECE)",
-        "area": "Image Processing, ML, DL, NLP, VLSI",
-        "exp": "10+ years"
+        "area": "Image Processing, Machine Learning, Deep Learning, NLP, VLSI",
+        "ids": "ORCID: 0009-0009-0167-4457"
       },
       { "name": "Ms. Pallavi Semwal", "role": "Assistant Professor" },
       { "name": "Mr. Nitin Thapliyal", "role": "Assistant Professor" },
@@ -90,15 +87,10 @@
       { "name": "Ms. Stuti Bhatt", "role": "Assistant Professor" },
       { "name": "Ms. Amrita Tiwari", "role": "Assistant Professor" },
       { "name": "Ms. Sudhani Verma", "role": "Assistant Professor" },
-      { "name": "Ms. Manvi Bohra", "role": "Assistant Professor" },
-      { "name": "Mr. Tushar Sharma", "role": "Teaching Associate" },
-      { "name": "Ms. Tashi Negi", "role": "Teaching Associate" },
-      { "name": "Mr. Daksh Rawat", "role": "Teaching Associate" },
-      { "name": "Ms. Sameeskha Ahuja", "role": "Teaching Associate" }
+      { "name": "Ms. Manvi Bohra", "role": "Assistant Professor" }
     ]
   },
   "computer_application": {
-    "total": 34,
     "members": [
       { "name": "Dr. Raj Kishor Bisht", "role": "Professor" },
       { "name": "Dr. Sunil Shukla", "role": "Professor" },
@@ -137,7 +129,6 @@
   },
   "management": {
     "hod": "Dr. Vishal Sagar",
-    "total": 56,
     "members": [
       { "name": "Dr. Vishal Sagar", "role": "Professor, HoD" },
       { "name": "Prof. (Dr.) Prashant Singh Kutaula", "role": "Professor of Practice" },
@@ -191,7 +182,7 @@
       {
         "name": "Mr. Manish Garg",
         "role": "Assistant Professor",
-        "edu": "MBA, B-TECH (EC)",
+        "edu": "MBA, GEIT (2008); B-TECH (EC) 2005",
         "area": "Marketing Finance",
         "exp": "15+ years"
       },
@@ -209,37 +200,8 @@
       { "name": "Ms. Akansha Dobhal", "role": "Assistant Professor" }
     ]
   },
-  "civil_engineering": {
-    "hod": "Mr. Anoop Bahuguna",
-    "total": 7,
-    "members": [
-      { "name": "Mr. Anoop Bahuguna", "role": "Assistant Professor & HoD" },
-      { "name": "Dr. Bindu Agarwal", "role": "Professor" },
-      { "name": "Ms. Ritiksha Danu", "role": "Assistant Professor" },
-      { "name": "Mr. Mahesh Chandra Shah", "role": "Assistant Professor" },
-      { "name": "Mr. Ankit Nainwal", "role": "Assistant Professor" },
-      { "name": "Mr. Ankit Negi", "role": "Assistant Professor" }
-    ]
-  },
-  "mechanical_engineering": {
-    "hod": "Mr. Tarun Kumar Dhiman",
-    "total": 10,
-    "members": [
-      { "name": "Mr. Tarun Kumar Dhiman", "role": "HOD, Assistant Professor" },
-      { "name": "Dr. Deepak Gupta", "role": "Assistant Professor" },
-      { "name": "Dr. Ayush Painuly", "role": "Assistant Professor" },
-      { "name": "Dr. Jitendra Singh", "role": "Assistant Professor" },
-      { "name": "Dr. Sateesh Kumar Yadav", "role": "Assistant Professor" },
-      { "name": "Ms. Vaishally Dogra", "role": "Assistant Professor" },
-      { "name": "Mr. Deepak Verma", "role": "Assistant Professor" },
-      { "name": "Mr. Amit Kumar Singh", "role": "Assistant Professor" },
-      { "name": "Mr. Pankaj Negi", "role": "Assistant Professor" },
-      { "name": "Mr. Rahul Keshari", "role": "Assistant Professor" }
-    ]
-  },
   "law": {
     "hod": "Dr. Vivek Goyal",
-    "total": 14,
     "members": [
       { "name": "Dr. Vivek Goyal", "role": "Associate Professor & HOD" },
       { "name": "Dr. Anupama Thakur", "role": "Assistant Professor" },
@@ -255,6 +217,106 @@
       { "name": "Mr. Harshit Singh Jadoun", "role": "Assistant Professor" },
       { "name": "Ms. Divyansha Vasishth", "role": "Assistant Professor" },
       { "name": "Mr. Ateet Parihar", "role": "Assistant Professor" }
+    ]
+  },
+  "agriculture": {
+    "hod": "Dr. Arvind Singh Negi",
+    "members": [
+      { "name": "Dr. Arvind Singh Negi", "role": "Associate Professor & HOD" },
+      { "name": "Dr. Balwant Singh Rawat", "role": "Associate Professor" },
+      { "name": "Dr. Anita Singh", "role": "Associate Professor" },
+      { "name": "Dr. Vivek Kumar Pathak", "role": "Associate Professor" },
+      { "name": "Dr. Pooja Bhatt", "role": "Assistant Professor" },
+      { "name": "Dr. Rajneesh Bhardwaj", "role": "Assistant Professor" },
+      { "name": "Dr. Rowndel Khwairakpam", "role": "Assistant Professor" },
+      { "name": "Dr. Supriya Gupta", "role": "Assistant Professor" },
+      { "name": "Dr. Ashish Kaushal", "role": "Assistant Professor" },
+      { "name": "Dr. Pallavi Joshi", "role": "Assistant Professor" },
+      { "name": "Dr. Anupama Rawat", "role": "Assistant Professor" },
+      { "name": "Ms. Pooja Kala", "role": "Assistant Professor" },
+      { "name": "Dr. Parul Chaudhary", "role": "Assistant Professor" },
+      { "name": "Dr. Pallavi Bhatt", "role": "Assistant Professor" },
+      { "name": "Dr. Harshita Negi", "role": "Assistant Professor" },
+      { "name": "Dr. Sayantika Bhattacharya", "role": "Assistant Professor" },
+      { "name": "Dr. Kumar Gaurav", "role": "Assistant Professor" },
+      { "name": "Dr. Pragya Goswamy", "role": "Assistant Professor" },
+      { "name": "Dr. Nikita Chauhan", "role": "Assistant Professor" },
+      { "name": "Dr. Deepa Nainwal", "role": "Assistant Professor" },
+      { "name": "Dr. Md Sabir Ahmed Mondol", "role": "Assistant Professor" },
+      { "name": "Ms. Vriksha Singh", "role": "Lecturer" }
+    ]
+  },
+  "english": {
+    "hod": "Prof. (Dr) S.A. Thameemul Ansari",
+    "members": [
+      { "name": "Prof. (Dr) S.A. Thameemul Ansari", "role": "Professor & HoD" },
+      { "name": "Dr. Vipin Kumar", "role": "Associate Professor" },
+      { "name": "Dr. Rupinder Kaur", "role": "Assistant Professor" },
+      { "name": "Dr. Vinay Devrani", "role": "Assistant Professor" },
+      { "name": "Dr. Pramod Thapliyal", "role": "Assistant Professor" },
+      { "name": "Dr. Sonal Dutt", "role": "Assistant Professor" },
+      { "name": "Dr. Laxmi Rawat Chauhan", "role": "Associate Professor" },
+      { "name": "Dr. Himanshu Negi", "role": "Assistant Professor" },
+      { "name": "Ms. Kanika Anthwal", "role": "Assistant Professor" },
+      { 
+        "name": "Mr. Amar Pratap Singh", 
+        "role": "Assistant Professor",
+        "edu": "Ph.D English (Pursuing) IIIT Guwahati; M.A Banaras Hindu University",
+        "area": "Digital Humanities, Literary Theory, Linguistics",
+        "ids": "ORCID: 0000-0002-5937-5486"
+      },
+      { "name": "Ms. Yachna Suryavanshi", "role": "Assistant Professor" },
+      { "name": "Ms. Gayatri Semwal", "role": "Assistant Professor" }
+    ]
+  },
+  "commerce": {
+    "hod": "Dr. Rahul Raj",
+    "members": [
+      { "name": "Dr. Rahul Raj", "role": "Associate Professor & HOD" },
+      { "name": "Dr. Vinayendra Mani Tripathi", "role": "Professor" },
+      { 
+        "name": "Dr. Rakshit Negi", 
+        "role": "Professor",
+        "edu": "Ph.D. (Commerce), IMBA (Marketing) Russia",
+        "area": "Consumer Behaviour, International Business",
+        "exp": "20+ years",
+        "ids": "ORCID: 0000-0003-0776-3011"
+      },
+      { "name": "Dr. Amar Singh", "role": "Associate Professor" },
+      { "name": "Dr. Megha Batola", "role": "Associate Professor" },
+      { "name": "CS (Dr) Ruchitra Kaparwan", "role": "Assistant Professor" },
+      { "name": "CS (Dr) Sangeeta Bagga", "role": "Assistant Professor" },
+      { "name": "Dr. Mridu", "role": "Assistant Professor" },
+      { "name": "Mr. Anil Dhasmana", "role": "Assistant Professor" },
+      { "name": "CA Bijaya Laxmi Thapliyal", "role": "Assistant Professor" },
+      { "name": "Dr. Barun Srivastava", "role": "Assistant Professor" },
+      { "name": "Ms. Neha Rani", "role": "Assistant Professor" },
+      { "name": "Mr. Swapnil Gaur", "role": "Assistant Professor" }
+    ]
+  },
+  "bfsi": {
+    "hod": "Dr. Kamal Pant",
+    "members": [
+      { 
+        "name": "Dr. Kamal Pant", 
+        "role": "Professor & Head",
+        "edu": "Ph.D. (Commerce), MBA (Banking & Finance)",
+        "area": "Financial Analytics, Direct Taxation",
+        "exp": "19 years",
+        "ids": "Vidwan: 404279"
+      }
+    ]
+  },
+  "physics": {
+    "hod": "Dr. Amit Raj Singh",
+    "members": [
+      { 
+        "name": "Dr. Amit Raj Singh", 
+        "role": "Associate Professor, HoD",
+        "edu": "Ph.D., Physics, BHU",
+        "area": "Condensed Matter Physics, Computational Physics",
+        "ids": "ORCID: 0000-0002-7198-5420"
+      }
     ]
   }
 }

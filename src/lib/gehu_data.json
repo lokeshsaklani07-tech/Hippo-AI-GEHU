@@ -4,77 +4,92 @@
     "campuses": {
       "dehradun": {
         "location": "Bell Road, Clement Town, Dehradun, Uttarakhand 248002",
-        "description": "Nestled between Rajaji National Park and Clement Town Cantonment"
+        "description": "Nestled between Rajaji National Park and Clement Town Cantonment. 5-min drive from ISBT, 20-min from Railway Station."
       },
       "bhimtal": {
         "location": "SatTal Road, Bhimtal, Nainital, Uttarakhand 263136",
-        "features": ["Serene environment", "Open Air Theatre"]
+        "features": ["Serene environment in Kumaon foothills", "Open Air Theatre", "Cafeteria", "Play fields"]
       },
       "haldwani": {
         "location": "Tularampur, Bareilly Road, Haldwani-263139 (Nainital)",
-        "features": ["Urban commercial market", "Amphitheater"]
+        "features": ["Urban commercial market", "Amphitheater", "Grand Library", "Well-equipped labs"]
       }
     },
-    "founded": 2011,
-    "established": 1993,
-    "parent": "Graphic Era Educational Society (GEES)",
-    "type": "Private University",
+    "history": {
+      "founded_year": 2011,
+      "established_year": 1993,
+      "story": "Started as a small Computer Center in 1993 with 2 computers and ₹29,000. Evolved into GEIT in 1997, marking the first self-financed engineering institute in Uttarakhand.",
+      "milestones": [
+        "1993: Founded as Computer Center",
+        "1997: Established Graphic Era Institute of Technology (GEIT)",
+        "2008: Accorded Deemed University status",
+        "2011: Graphic Era Hill University established under State Act",
+        "2015: NAAC Grade 'A' (Highest in North India)",
+        "2022: NAAC Grade 'A+' Accreditation",
+        "2023: Times Higher Education World Ranking 601-800"
+      ]
+    },
     "leadership": {
       "founder": "Prof. (Dr.) Kamal Ghanshala",
-      "director": "Col. Anil Kumar Nair (Retd.)"
-    },
-    "vision": "To be an internationally recognized, inquiry-driven, ethically engaged university.",
-    "mission": "To promote learning in true spirit, offering knowledge and skills needed to succeed."
+      "vision": "To be an internationally recognized, inquiry-driven, ethically engaged university.",
+      "mission": "To promote learning in true spirit, offering knowledge and skills needed to succeed."
+    }
   },
   "accreditations_rankings": {
-    "grades": ["NAAC A+", "UGC 2(f)", "AICTE Approved"],
-    "nba_programs": ["CSE", "EE", "Civil", "ECE", "Mechanical", "Biotechnology", "MBA"],
-    "nirf_2022": { "Engineering": 64, "Management": 65, "University": 74 },
-    "the_world_2022": "Rank Band 601-800"
+    "highlights": [
+      "NAAC A+ Grade (2022)",
+      "NIRF 2021: Rank 75 (Engineering), 64 (Management), 98 (University)",
+      "Times Higher Education 2023: Band 601-800 (Global)",
+      "QS-IGauge Diamond Category Award"
+    ],
+    "approvals": ["UGC 2(f)", "AICTE Approved for Engineering, Management, and MCA"]
   },
-  "milestones": [
-    { "year": 1993, "event": "Started as Computer Center" },
-    { "year": 2008, "event": "Deemed University status" },
-    { "year": 2011, "event": "GEHU Establishment" },
-    { "year": 2022, "event": "NAAC A+ Grade" }
-  ],
-  "facilities": [
-    "Smart Boards", "Labs", "Digital Library", "Sports & Gym", "Hostels", 
-    "Cafeterias & Food Trucks", "Wi-Fi", "Radio Station", "Medical Services",
-    "Ubuntu & Mac Labs", "Moot Court", "Agriculture Labs"
-  ],
   "departments": [
-    "Agriculture", "Allied Sciences", "Animation", "BFSI", "Chemistry", "Civil", "Commerce", 
-    "CS & IT", "Design", "ECE", "Fashion", "Law", "Management", "Mechanical", "Media", "Pharmacy"
+    "Agriculture", "Allied Sciences", "Animation and Gaming", "BFSI", "Chemistry", "Civil Engineering", 
+    "Commerce", "Computer Application", "Computer Science and Engineering", "Design", "Electronics and Communication Engineering",
+    "Fashion Design", "Humanities and Social Science", "Law", "Management", "Mathematics", "Mechanical Engineering",
+    "Media and Mass Communication", "Pharmacy", "Physics", "Visual Arts/Fine Arts"
   ],
-  "courses": {
-    "Undergraduate": ["B.Des", "B.Sc Animation", "B.Com (Hons)", "B.Tech (GIS/CM)", "BCA (Cyber Security)"],
-    "Postgraduate": ["MBA (AI/DS, HR, Marketing, Finance)", "MCA"],
-    "BTech_Specializations": ["CSE (Cybersecurity, ML & AI)", "AI & Data Science"],
-    "Management": ["BBA (Airport, Hons, E-commerce, Entrepreneurship, AI/DS)", "MBA"]
-  },
   "admission": {
-    "fee": "₹1500",
-    "process": ["Choose Course", "Online Application", "Upload Docs", "Merit Selection", "Pay Fee"],
+    "application_fee": "₹1500",
+    "steps": [
+      "1. Choose Course: Select from 85+ programs.",
+      "2. Online Application: Paperless process recommended.",
+      "3. Form & Docs: Fill details and upload qualifying documents.",
+      "4. Review & Submit: Verify credentials.",
+      "5. Pay Application Fee: ₹1500 via UPI/Card.",
+      "6. Finalize Admission: Pay course fee after allotment."
+    ],
     "scholarships": {
-      "merit": "Up to 70%",
-      "female": "10% additional",
-      "defence": "5%",
-      "domicile": "25% for Uttarakhand"
+      "merit": "70% of scholarships are merit-based.",
+      "female": "10% additional scholarship for girls.",
+      "defence": "5% tuition fee waiver for wards of defence personnel.",
+      "domicile": "25% fee concession for Uttarakhand residents."
     },
-    "GECET": "Entrance test with up to ₹100Cr in scholarships"
+    "GECET": {
+      "name": "Graphic Era Common Entrance Test",
+      "benefit": "Up to ₹100 Crores in scholarships, up to 100% Tuition Fee Waiver."
+    }
   },
   "placements": {
-    "year": "2024-25",
-    "offers": "2300+",
-    "highest": "₹61.99 LPA",
-    "average": "₹5 LPA+",
-    "top_recruiters": ["Amazon", "Adobe", "Microsoft", "Google", "Infosys", "PayPal", "Genpact"]
+    "session_2024_25": {
+      "total_offers": "2300+",
+      "highest_package": "₹61.99 Lakhs",
+      "packages_above_40L": "10 offers",
+      "packages_above_15L": "33 offers",
+      "average_package": "₹5 Lakhs+",
+      "top_recruiters": ["Amazon", "Adobe", "Microsoft", "Google", "Infosys", "PayPal", "Genpact"]
+    }
+  },
+  "facilities": {
+    "academic": ["Smart Boards", "Mac Lab", "Ubuntu Lab", "Moot Court", "Fashion Studio", "Radio Station"],
+    "amenities": ["Hostels (Boys & Girls)", "Cafeterias", "Food Trucks", "Sports Complex", "Gym", "Medical Services"]
   },
   "contact": {
-    "numbers": ["1800 890 6027", "1800 270 1280"],
+    "toll_free": ["1800 890 6027", "1800 270 1280"],
     "whatsapp": "+91 9520986896",
     "email": "admissions@gehu.ac.in",
-    "hours": "8 AM - 8 PM (All days)"
+    "hours": "8 AM to 8 PM (All days)",
+    "admission_centers": "28 centers across India & Nepal (Agra, Delhi, Lucknow, Ranchi, Kathmandu, etc.)"
   }
 }

@@ -200,6 +200,32 @@
       { "name": "Ms. Akansha Dobhal", "role": "Assistant Professor" }
     ]
   },
+  "civil_engineering": {
+    "hod": "Mr. Anoop Bahuguna",
+    "members": [
+      { "name": "Mr. Anoop Bahuguna", "role": "Assistant Professor & HoD" },
+      { "name": "Dr. Bindu Agarwal", "role": "Professor" },
+      { "name": "Ms. Ritiksha Danu", "role": "Assistant Professor" },
+      { "name": "Mr. Mahesh Chandra Shah", "role": "Assistant Professor" },
+      { "name": "Mr. Ankit Nainwal", "role": "Assistant Professor" },
+      { "name": "Mr. Ankit Negi", "role": "Assistant Professor" }
+    ]
+  },
+  "mechanical_engineering": {
+    "hod": "Mr. Tarun Kumar Dhiman",
+    "members": [
+      { "name": "Mr. Tarun Kumar Dhiman", "role": "HOD, Assistant Professor" },
+      { "name": "Dr. Deepak Gupta", "role": "Assistant Professor" },
+      { "name": "Dr. Ayush Painuly", "role": "Assistant Professor" },
+      { "name": "Dr. Jitendra Singh", "role": "Assistant Professor" },
+      { "name": "Dr. Sateesh Kumar Yadav", "role": "Assistant Professor" },
+      { "name": "Ms. Vaishally Dogra", "role": "Assistant Professor" },
+      { "name": "Mr. Deepak Verma", "role": "Assistant Professor" },
+      { "name": "Mr. Amit Kumar Singh", "role": "Assistant Professor" },
+      { "name": "Mr. Pankaj Negi", "role": "Assistant Professor" },
+      { "name": "Mr. Rahul Keshari", "role": "Assistant Professor" }
+    ]
+  },
   "law": {
     "hod": "Dr. Vivek Goyal",
     "members": [

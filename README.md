@@ -1,59 +1,38 @@
-# 🦛 Hippo-AI-GEHU2
+# 🦛 Hippo-AI-GEHU
+Professional AI Assistant for Graphic Era Hill University (GEHU) students.
 
-Hippo is a professional, Jarvis-style AI chatbot designed specifically for students of **Graphic Era Hill University (GEHU)**. Built with a premium glassmorphic interface, it leverages Gemini 1.5 Flash and Tavily Search to provide cited, real-time answers.
+Hippo is a respectful, high-performance AI chatbot designed to facilitate academic inquiries and provide accurate information about GEHU Dehradun.
 
-![Hippo Preview](https://img.shields.io/badge/Interface-Jarvis--Style-blue?style=for-the-badge)
-![Tech Stack](https://img.shields.io/badge/Stack-Next.js%20|%20Tailwind%20|%20Gemini-black?style=for-the-badge)
+## 🚀 Key Features
+- **Brain**: Powered by **Groq (Llama 3.1 8B)** for ultra-fast, intelligent reasoning.
+- **Respectful & Academic**: Tuned to maintain academic decorum and politeness in all interactions.
+- **Granular Knowledge Base**: Optimized RAG pipeline that loads specific faculty and department data on-demand to keep context clean and responses fast.
+- **Smart Search**: Integrated with **Tavily Search API** for real-time news and latest university updates.
+- **Gen-Z Friendly but Professional**: Designed for students, maintaining a helpful and supportive tone.
 
-## 🚀 Features
-
-- **Brain**: Powered by **Gemini 1.5 Flash** for sophisticated and fast reasoning.
-- **Internet Access**: Integrated with **Tavily Search API** to browse the top 3 web results for latest news and academic queries.
-- **Jarvis Interface**: Modern dark-themed UI with glassmorphism effects, fluid animations (Framer Motion), and glowing neon accents.
-- **Citations**: Automatically provides source links for any information retrieved from the web.
-- **GEHU Quick Links**: A dedicated sidebar for instant access to ERP, Examination Portal, and Academic Calendars.
+## 📁 Knowledge Organization (`src/lib/`)
+- `gehu_data.json`: Comprehensive university overview, history (1993-Present), rankings, and 6-step admission process.
+- `gehu_faculty.json`: Granular directory of 200+ faculty members across 10+ departments (CSE, Management, Law, Agriculture, etc.).
+- `general_data.json`: Core bot identity and greeting patterns.
+- `pyqs_index.json`: Repository links for Previous Year Questions.
 
 ## 🛠️ Tech Stack
-
-- **Framework**: Next.js 14 (App Router)
-- **Styling**: Tailwind CSS
-- **Animations**: Framer Motion
-- **AI**: Google Generative AI (Gemini SDK)
+- **Frontend**: Next.js 16 (App Router) / React 19
+- **Brain**: Groq SDK (Llama 3.1 8B)
 - **Search**: Tavily API
-- **Icons**: Lucide React
+- **Styling**: Tailwind CSS & Framer Motion
+- **Database (Mock)**: Structured JSON Knowledge Base
 
 ## 📦 Getting Started
-
-### 1. Clone the repository
-```bash
-git clone https://github.com/yourusername/Hippo-AI-GEHU2.git
-cd Hippo-AI-GEHU2
-```
-
-### 2. Install dependencies
-```bash
-npm install
-```
-
-### 3. Set up Environment Variables
-Create a `.env.local` file in the root directory:
-```env
-GEMINI_API_KEY=your_gemini_api_key
-TAVILY_API_KEY=your_tavily_api_key
-```
-
-### 4. Run locally
-```bash
-npm run dev
-```
-
-## ☁️ Deployment
-
-Hippo is optimized for **Vercel**. 
-1. Push your code to GitHub.
-2. Connect your repo to Vercel.
-3. Add `GEMINI_API_KEY` and `TAVILY_API_KEY` to the Environment Variables section in Vercel.
-4. Deploy!
+1. Clone the repo.
+2. Install deps: `npm install`
+3. Set `.env.local`:
+   ```env
+   GROQ_API_KEY=your_key
+   TAVILY_API_KEY=your_key
+   ```
+4. Start dev server: `npm run dev`
 
 ---
-*Created with ❤️ for GEHU Students.*
+*Maintained with excellence for the GEHU community.*
+

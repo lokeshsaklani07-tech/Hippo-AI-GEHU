@@ -87,7 +87,11 @@
       { "name": "Ms. Stuti Bhatt", "role": "Assistant Professor" },
       { "name": "Ms. Amrita Tiwari", "role": "Assistant Professor" },
       { "name": "Ms. Sudhani Verma", "role": "Assistant Professor" },
-      { "name": "Ms. Manvi Bohra", "role": "Assistant Professor" }
+      { "name": "Ms. Manvi Bohra", "role": "Assistant Professor" },
+      { "name": "Mr. Tushar Sharma", "role": "Teaching Associate" },
+      { "name": "Ms. Tashi Negi", "role": "Teaching Associate" },
+      { "name": "Mr. Daksh Rawat", "role": "Teaching Associate" },
+      { "name": "Ms. Sameeskha Ahuja", "role": "Teaching Associate" }
     ]
   },
   "computer_application": {
@@ -189,7 +193,7 @@
       { "name": "Ms. Ruchi Dhameja", "role": "Assistant Professor" },
       { "name": "Mr. Akhilendra Negi", "role": "Assistant Professor" },
       { "name": "Ms. Amreen Siddiqui", "role": "Assistant Professor" },
-      { "name": "Ms. Anshika Gautam", "role": "Assistant Professor" },
+      { "name": "Ms. Anshika Gautam", "role": "Assistant Professor (Ad Hoc)" },
       { "name": "Ms. Sweta Bagdwal", "role": "Assistant Professor" },
       { "name": "Mr. Bharat Balutia", "role": "Assistant Professor" },
       { "name": "Ms. Anam Parveen", "role": "Assistant Professor" },

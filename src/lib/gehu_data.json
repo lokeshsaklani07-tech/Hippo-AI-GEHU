@@ -87,11 +87,35 @@
     "academic": ["Smart Boards", "Mac Lab", "Ubuntu Lab", "Moot Court", "Fashion Studio", "Radio Station"],
     "amenities": ["Hostels (Boys & Girls)", "Cafeterias", "Food Trucks", "Sports Complex", "Gym", "Medical Services"]
   },
+  "courses": {
+    "undergraduate": [
+      "B.Des. in Interior Design", "B.Des. in Animation and Gaming", "B.Des. in User Experience and Interaction Design",
+      "B.Des. in Product Design", "B.Sc. in Animation and Gaming", "B.Com (Hons) – Corporate Public Accountant",
+      "B.Tech (Civil Engineering with specialization in GIS & Remote Sensing)", "B.Tech (Civil Engineering with specialization in Construction Management)",
+      "B.Tech in Electronics and Communication Engineering", "BCA (Hons.) in Cyber Security", "B.Tech Computer Science Engineering",
+      "B.Tech CSE (Hons.) with specialization in Cybersecurity", "B.Tech CSE (Hons.) with specialization in Machine Learning and AI",
+      "B.Tech Artificial Intelligence And Data Science", "BBA With Specialization In Airport And Airline Management",
+      "Bachelor of Business Administration (Hons.)", "BBA E-commerce and Digital Marketing", "BBA Entrepreneurship",
+      "BBA International Finance And Accounting With ACCA"
+    ],
+    "postgraduate": [
+      "MBA in Artificial Intelligence and Data Science", "MBA in Business Analytics", "MBA in Human Resource Management",
+      "MBA in Logistics & Supply Chain Management", "MBA in Marketing Management", "MBA in Hospital Administration",
+      "MBA in Finance Management", "MBA in Information Technology", "MBA in International Business",
+      "MBA in Retail Management", "Master of Business Administration (MBA)"
+    ],
+    "diploma": ["Diploma In Computer Science Engineering"]
+  },
   "contact": {
     "toll_free": ["1800 890 6027", "1800 270 1280"],
     "whatsapp": "+91 9520986896",
-    "email": "admissions@gehu.ac.in",
+    "email": ["admissions@gehu.ac.in", "enquiry@gehu.ac.in"],
     "hours": "8 AM to 8 PM (All days)",
-    "admission_centers": "28 centers across India & Nepal (Agra, Delhi, Lucknow, Ranchi, Kathmandu, etc.)"
+    "admission_centers": {
+      "total": 28,
+      "indian_cities": ["Agra", "Almora", "Bareilly", "Bhopal", "Bijnor", "Chandigarh", "Delhi", "Dharamshala", "Durgapur", "Gorakhpur", "Guwahati", "Haldwani", "Indore", "Jaipur", "Jammu", "Kanpur", "Khatima", "Kotdwar", "Lucknow", "Meerut", "Moradabad", "Patna", "Pithoragarh", "Prayagraj", "Ranchi", "Saharanpur", "Varanasi"],
+      "international": ["Kathmandu, Nepal"]
+    }
   }
 }
+

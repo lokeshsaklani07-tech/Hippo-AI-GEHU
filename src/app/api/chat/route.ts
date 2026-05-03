@@ -7,25 +7,8 @@ import pyqsIndex from "@/lib/pyqs_index.json";
 import misogynyResearch from "@/lib/misogyny_research.json";
 import gehuFaculty from "@/lib/gehu_faculty.json";
 
-const DEVANAGARI_RE = /[\u0900-\u097F]/;
-const HINDI_KEYWORDS = new Set([
-    "bhai","yaar","kaise","kya","hai","ho","mujhe","tum","ka","ki",
-    "mera","mere","bhi","na","ab","abhi","thik","padh","lecture",
-    "assignment","exam","semester","hostel","scholarship","fees",
-    "paper","pyq","solution","solve","previous","year","paper"
-]);
-
-function isHinglish(text: string): boolean {
-    if (DEVANAGARI_RE.test(text)) return true;
-    const words = text.toLowerCase().match(/\b\w+\b/g) || [];
-    let hits = 0;
-    for (const w of words) {
-        if (HINDI_KEYWORDS.has(w)) hits++;
-    }
-    return hits >= 2;
-}
-
 const groq = new Groq({ apiKey: process.env.GROQ_API_KEY });
+
 
 export async function POST(req: Request) {
   try {
@@ -50,8 +33,6 @@ export async function POST(req: Request) {
         }
       } catch (e) { console.error("Search error", e); }
     }
-
-    const lang = isHinglish(lastMessage) ? "hi" : "en";
 
     // 2. Granular Faculty Loading (Save Context & Speed)
     let facultyContext = "";
@@ -85,17 +66,17 @@ export async function POST(req: Request) {
 
     RULES:
     - You are Hippo, GEHU's polite and helpful AI assistant.
+    - LANGUAGE: Always reply in English only. Never use Hindi or Hinglish.
     - BE RESPECTFUL: Always maintain a respectful and courteous tone. 
     - ACADEMIC DECORUM: Use respectful titles (Prof., Dr., Mr., Ms.) for all faculty and staff.
     - HELP STUDENT: Be supportive and professional in your guidance.
-    - If lang is 'hi', use polite Hinglish (bhai/yaar is okay but don't be rude or disrespectful).
     - Keep answers clear and helpful.`;
 
-    const systemInstruction = `You are Hippo, the respectful and friendly AI assistant for Graphic Era Hill University (GEHU). 
-    Your primary goal is to assist students with accuracy and politeness.
-    Mode: ${lang === "hi" ? "Hinglish" : "English"}.
+    const systemInstruction = `You are Hippo, the respectful and friendly English-speaking AI assistant for Graphic Era Hill University (GEHU). 
+    Your primary goal is to assist students with accuracy and politeness in English.
     ${baseContext}
     ${searchContext}`;
+
 
 
 

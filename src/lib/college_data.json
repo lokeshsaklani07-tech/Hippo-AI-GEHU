@@ -1,41 +1,1612 @@
 {
-  "college": {
-    "name": "Graphic Era Hill University (GEHU)",
-    "location": "Dehradun, Uttarakhand",
-    "facilities": ["Wi-Fi Campus", "Hi-tech Labs", "Digital Library", "Sports Complex", "Cafeteria"]
-  },
-  "courses": ["B.Tech", "BCA", "BBA", "MBA", "MCA", "B.Com", "B.Sc"],
-  "specializations": {
-    "B.Tech": ["CSE", "Mechanical", "Civil", "ECE", "AI & Data Science"],
-    "BBA": ["General", "Banking", "International Business"]
-  },
-  "fees": {
-    "B.Tech": "INR 1,50,000 per semester",
-    "BCA": "INR 60,000 per semester",
-    "BBA": "INR 70,000 per semester",
-    "note": "Fees may vary based on scholarship and domicile."
-  },
-  "scholarships": ["Domicile Scholarship (UK)", "Merit-based (Class 12th %)", "Female Candidate Scholarship"],
-  "admission": {
-    "process": [
-      "1. Register on the GEHU portal",
-      "2. Fill the application form",
-      "3. Upload documents",
-      "4. Pay the registration fee",
-      "5. Selection based on Merit/Entrance"
-    ]
-  },
-  "eligibility": {
-    "B.Tech": "10+2 with Physics, Maths, and Chemistry (Min 60%)",
-    "BBA": "10+2 in any stream (Min 50%)"
-  },
-  "placements": {
-    "top_recruiters": ["Google", "Amazon", "Adobe", "Microsoft", "TCS", "Zscaler"],
-    "highest_package": "INR 84 LPA",
-    "average_package": "INR 5.5 LPA"
-  },
-  "student_services": {
-    "hostel": "Available for both Boys and Girls with mess facilities.",
-    "transport": "Daily bus service covering all major routes in Dehradun."
+  "graphic_era_hill_university": {
+    "university_overview": {
+      "name": "Graphic Era Hill University",
+      "campus": "Dehradun",
+      "location": "Uttarakhand, India",
+      "founded": 2011,
+      "parent_organization": "Graphic Era Educational Society (GEES)",
+      "established": 1993,
+      "address": "Graphic Era Hill University Bell Road, Clement Town, Dehradun, Uttarakhand 248002",
+      "type": "Private University",
+      "vision": "To be an internationally recognized, inquiry-driven, ethically engaged university with a diverse community, whose members work collaboratively for the positive transformation of the world by pioneering teaching, research, and social awareness",
+      "mission": "To promote learning in true spirit, offering knowledge and skills needed to succeed as professionals, and the values and sensitivity needed to be responsible citizens of the world"
+    },
+
+    "accreditations_rankings": {
+      "UGC": "Recognized under Section 2(f) of UGC Act, 1956",
+      "AICTE": "Approved for Engineering, Management, and MCA programs",
+      "NAAC": "Accredited with 'A+' grade",
+      "NBA": {
+        "accredited_programs": [
+          "Computer Science & Engineering",
+          "Electrical Engineering",
+          "Civil Engineering",
+          "Electronics & Communication Engineering",
+          "Mechanical Engineering",
+          "Biotechnology",
+          "Masters in Business Administration"
+        ]
+      },
+      "nirf_2022": {
+        "engineering": "AIR 64",
+        "management": "AIR 65",
+        "university": "AIR 74"
+      },
+      "times_higher_education": {
+        "world_university": "Rank Band 601-800",
+        "engineering": "Rank Band 301-400"
+      }
+    },
+
+    "leadership": {
+      "founder_president": "Prof. (Dr.) Kamal Ghanshala",
+      "director": "Col. Anil Kumar Nair (Retd.)",
+      "achievements": [
+        "Uttarakhand Ratna, 2007",
+        "Visionary Edupreneur of India Award, 2017"
+      ]
+    },
+
+    "historical_milestones": [
+      {"year": 1993, "event": "Started as Computer Center with two computers and INR 29,000 fund"},
+      {"year": 1997, "event": "Established as Graphic Era Institute of Technology"},
+      {"year": 1998, "event": "Started BCA and BMIT programs"},
+      {"year": 2001, "event": "Launched B.Tech programs in CSE/IT and ECE"},
+      {"year": 2008, "event": "Granted Deemed University status"},
+      {"year": 2011, "event": "Established as Graphic Era Hill University"},
+      {"year": 2015, "event": "NAAC accreditation with grade 'A'"},
+      {"year": 2017, "event": "NIRF Rank 101-150 in Engineering"},
+      {"year": 2018, "event": "AICTE approval and NBA accreditation"},
+      {"year": 2019, "event": "Rank 2 in Uttarakhand after IIT Roorkee"},
+      {"year": 2020, "event": "1082 placement offers with highest package ₹43.95L"},
+      {"year": 2021, "event": "NIRF Rank 75 in Engineering, 64 in Management"},
+      {"year": 2022, "event": "NAAC 'A+' grade, THE World Ranking recognition"}
+    ],
+
+    "campus_facilities": {
+      "location": "Nestled between Rajaji National Park and Clement Town Cantonment",
+      "infrastructure": [
+        "Modern classrooms with smart boards",
+        "State-of-the-art laboratories",
+        "Comprehensive library with e-resources",
+        "Sports facilities and gymnasiums",
+        "Hostel accommodation for boys and girls",
+        "Multiple cafeterias and food trucks",
+        "High-speed Wi-Fi enabled campus",
+        "Indoor and outdoor auditoriums",
+        "Recreational areas",
+        "Radio station",
+        "Medical services"
+      ],
+      "special_facilities": [
+        "Ubuntu Computer Lab",
+        "Mac Lab",
+        "Conference Room",
+        "Moot Court",
+        "Fashion Design facilities",
+        "Agriculture Department facilities"
+      ]
+    },
+
+    "academic_departments": [
+      "Agriculture",
+      "Allied Sciences",
+      "Animation and Gaming",
+      "Banking, Financial Services & Insurance (BFSI)",
+      "Chemistry",
+      "Civil Engineering",
+      "Commerce",
+      "Computer Application",
+      "Computer Science and Engineering",
+      "Department of Design",
+      "Design",
+      "Electronics and Communication Engineering",
+      "Engineering",
+      "Fashion Design",
+      "Humanities and Social Science/English",
+      "Law",
+      "Management",
+      "Mathematics",
+      "Mechanical Engineering",
+      "Media and Mass Communication",
+      "PDP",
+      "Pharmacy",
+      "Physics",
+      "User Experience & Interaction Design",
+      "Visual Arts/Fine Arts"
+    ],
+
+    "faculty_details": {
+      "computer_science_engineering": {
+        "head_of_department": "Prof. Anupam Singh",
+        "total_faculty": 62,
+        "faculty_members": [
+          {
+            "name": "Prof. Anupam Singh",
+            "position": "Head of Department",
+            "education": [
+              "Ph.D(Computer Science & Engineering), Dr. APJ Abdul Kalam Technical University, Lucknow, 2022",
+              "M. Tech. (Computer Science & Engineering), Dr. APJ Abdul Kalam Technical University, Lucknow, 2011",
+              "B. Tech. (IT), Dr. APJ Abdul Kalam Technical University, Lucknow, 2004"
+            ],
+            "research_area": "Formal Methods, Healthcare Informatics",
+            "experience": "20 Years",
+            "orcid_id": "0000-0002-3242-5383",
+            "scopus_id": "57211625912",
+            "vidwan_id": "96325"
+          },
+          {
+            "name": "Dr. Ved Prakash Dubey",
+            "position": "Professor"
+          },
+          {
+            "name": "Dr. Mahantesh Pattanshetti",
+            "position": "Professor"
+          },
+          {
+            "name": "Dr. Ashok Kumar Sahoo",
+            "position": "Professor"
+          },
+          {
+            "name": "Dr. Prateek Srivastava",
+            "position": "Professor"
+          },
+          {
+            "name": "Dr. Susheela Dahiya",
+            "position": "Professor"
+          },
+          {
+            "name": "Dr. Amit Kumar Mishra",
+            "position": "Associate Professor"
+          },
+          {
+            "name": "Dr. Amit Gupta",
+            "position": "Associate Professor",
+            "education": [
+              "Ph.D. Computer Science and Engineering, Graphic Era Hill University, Dehradun",
+              "M.Tech – Computer Science and Engineering, Uttarakhand Technical University, Dehradun, 2014"
+            ],
+            "research_area": "Machine Learning, Big Data Analysis",
+            "experience": "15+ years",
+            "orcid_id": "0000-0002-3109-4949",
+            "scopus_id": "57214417311",
+            "vidwan_id": "400113"
+          },
+          {
+            "name": "Dr. Ajay Narayan Shukla",
+            "position": "Associate Professor"
+          },
+          {
+            "name": "Mr. A. B. Desai",
+            "position": "Associate Professor"
+          },
+          {
+            "name": "Mr. Bhaskar Nautiyal",
+            "position": "Associate Professor"
+          },
+          {
+            "name": "Dr. Seema Gulati",
+            "position": "Assistant Professor"
+          },
+          {
+            "name": "Dr. Bina Bhandari",
+            "position": "Assistant Professor"
+          },
+          {
+            "name": "Dr. Saumitra Chattopadhyay",
+            "position": "Assistant Professor"
+          },
+          {
+            "name": "Dr. Chandradeep Bhatt",
+            "position": "Assistant Professor"
+          },
+          {
+            "name": "Dr. Vikrant Sharma",
+            "position": "Assistant Professor"
+          },
+          {
+            "name": "Dr. Jyoti Joshi",
+            "position": "Assistant Professor"
+          },
+          {
+            "name": "Dr. Vivek Chamoli",
+            "position": "Assistant Professor"
+          },
+          {
+            "name": "Dr. Mohit Payal",
+            "position": "Assistant Professor"
+          },
+          {
+            "name": "Dr. Arun Pratap Singh Rathod",
+            "position": "Assistant Professor"
+          },
+          {
+            "name": "Dr. Saurabh Agarwal",
+            "position": "Assistant Professor"
+          },
+          {
+            "name": "Dr. Priyanka Nautiyal",
+            "position": "Assistant Professor"
+          },
+          {
+            "name": "Mr. Purushottam Das",
+            "position": "Assistant Professor"
+          },
+          {
+            "name": "Mr. Rahul Chauhan",
+            "position": "Assistant Professor"
+          },
+          {
+            "name": "Mr. Rajeev Gupta",
+            "position": "Assistant Professor"
+          },
+          {
+            "name": "Mr. Avnish Panwar",
+            "position": "Assistant Professor"
+          },
+          {
+            "name": "Ms. Manika Manwal",
+            "position": "Assistant Professor"
+          },
+          {
+            "name": "Ms. Sonali Gupta",
+            "position": "Assistant Professor"
+          },
+          {
+            "name": "Mr. Chetan Pandey",
+            "position": "Assistant Professor",
+            "education": [
+              "Ph.D.(Pursuing) CSE, Graphic Era Deemed University",
+              "M.Tech. CSE, Graphic Era Deemed University, 2016-2018",
+              "B.Tech, CSE, Uttarakhand Technical University, 2007-2011"
+            ],
+            "research_area": "Data (Text, Image) Analysis, Data Security",
+            "experience": "5+ years",
+            "orcid_id": "0000-0003-0046-0317",
+            "scopus_id": "57216887983",
+            "vidwan_id": "413432"
+          },
+          {
+            "name": "Ms. Manisha Aeri",
+            "position": "Assistant Professor"
+          },
+          {
+            "name": "Mr. Sushant Chamoli",
+            "position": "Assistant Professor"
+          },
+          {
+            "name": "Mr. B. P. Dubey",
+            "position": "Assistant Professor"
+          },
+          {
+            "name": "Mr. Samir Rana",
+            "position": "Assistant Professor"
+          },
+          {
+            "name": "Ms. Ayushi Jain",
+            "position": "Assistant Professor"
+          },
+          {
+            "name": "Ms. Preeti Chaudhary",
+            "position": "Assistant Professor"
+          },
+          {
+            "name": "Mr. Akash Chauhan",
+            "position": "Assistant Professor",
+            "education": [
+              "M.Tech. (CSE), Delhi College of Engineering (DCE), 2014",
+              "B.Tech.(CSE), College of Engineering Roorkee, Uttarakhand, 2012"
+            ],
+            "research_area": "Computer Vision, Image Processing and Video Processing",
+            "experience": "4+ years education, 4+ years IT industry",
+            "orcid_id": "0009-0004-2004-0074",
+            "scopus_id": "57546854900",
+            "vidwan_id": "400144"
+          },
+          {
+            "name": "Ms. Lisa Gopal",
+            "position": "Assistant Professor"
+          },
+          {
+            "name": "Ms. Ishita Uniyal",
+            "position": "Assistant Professor"
+          },
+          {
+            "name": "Ms. Deeksha Naithani",
+            "position": "Assistant Professor"
+          },
+          {
+            "name": "Ms. Richa Gupta",
+            "position": "Assistant Professor"
+          },
+          {
+            "name": "Ms. Himadri Vaidya",
+            "position": "Assistant Professor"
+          },
+          {
+            "name": "Mr. Divesh Kumar",
+            "position": "Assistant Professor"
+          },
+          {
+            "name": "Mr. Saksham Mittal",
+            "position": "Assistant Professor"
+          },
+          {
+            "name": "Mr. Mukesh Kumar",
+            "position": "Assistant Professor"
+          },
+          {
+            "name": "Mr. Deepak Upadhyay",
+            "position": "Assistant Professor"
+          },
+          {
+            "name": "Ms. Preeti Badhani",
+            "position": "Assistant Professor"
+          },
+          {
+            "name": "Mr. Kapil Rajput",
+            "position": "Assistant Professor"
+          },
+          {
+            "name": "Dr. Jyoti Ramola",
+            "position": "Assistant Professor",
+            "education": [
+              "Advanced Certification in Data Science, Machine Learning, IOT, E&ICT Academy, IIT Guwahati, 2023",
+              "M. Tech VLSI System and Design, Graphic Era Deemed University, 2014",
+              "B.E. Electronics and Communication, University of Rajasthan"
+            ],
+            "research_area": "Image Processing, Machine Learning, Deep Learning, NLP, VLSI",
+            "experience": "10+ years",
+            "orcid_id": "0009-0009-0167-4457"
+          },
+          {
+            "name": "Ms. Pallavi Semwal",
+            "position": "Assistant Professor"
+          },
+          {
+            "name": "Mr. Nitin Thapliyal",
+            "position": "Assistant Professor"
+          },
+          {
+            "name": "Ms. Sonal Malhotra",
+            "position": "Assistant Professor"
+          },
+          {
+            "name": "Ms. Shraddha Kaparwan",
+            "position": "Assistant Professor"
+          },
+          {
+            "name": "Mr. Himanshu Namdev",
+            "position": "Assistant Professor"
+          },
+          {
+            "name": "Ms. Ritika Badhani",
+            "position": "Assistant Professor"
+          },
+          {
+            "name": "Ms. Stuti Bhatt",
+            "position": "Assistant Professor"
+          },
+          {
+            "name": "Ms. Amrita Tiwari",
+            "position": "Assistant Professor"
+          },
+          {
+            "name": "Ms. Sudhani Verma",
+            "position": "Assistant Professor"
+          },
+          {
+            "name": "Ms. Manvi Bohra",
+            "position": "Assistant Professor"
+          },
+          {
+            "name": "Mr. Tushar Sharma",
+            "position": "Teaching Associate"
+          },
+          {
+            "name": "Ms. Tashi Negi",
+            "position": "Teaching Associate"
+          },
+          {
+            "name": "Mr. Daksh Rawat",
+            "position": "Teaching Associate"
+          },
+          {
+            "name": "Ms. Sameeskha Ahuja",
+            "position": "Teaching Associate"
+          }
+        ]
+      },
+
+      "computer_application": {
+        "total_faculty": 34,
+        "faculty_members": [
+          {
+            "name": "Dr. Raj Kishor Bisht",
+            "position": "Professor"
+          },
+          {
+            "name": "Dr. Sunil Shukla",
+            "position": "Professor"
+          },
+          {
+            "name": "Dr. Nisha Chandran S.",
+            "position": "Associate Professor"
+          },
+          {
+            "name": "Dr. Luxmi Sapra",
+            "position": "Associate Professor"
+          },
+          {
+            "name": "Dr. Alka Pant",
+            "position": "Associate Professor"
+          },
+          {
+            "name": "Mr. Abhishek Jain",
+            "position": "Associate Professor"
+          },
+          {
+            "name": "Dr. Anupriya",
+            "position": "Assistant Professor"
+          },
+          {
+            "name": "Dr. Chandrakala Arya",
+            "position": "Assistant Professor"
+          },
+          {
+            "name": "Dr. Himani Maheshwari",
+            "position": "Assistant Professor"
+          },
+          {
+            "name": "Ms. Nidhi Mehra",
+            "position": "Assistant Professor"
+          },
+          {
+            "name": "Mr. Amit Juyal",
+            "position": "Assistant Professor"
+          },
+          {
+            "name": "Mr. Deepak Singh Rana",
+            "position": "Assistant Professor"
+          },
+          {
+            "name": "Mr. Aditya Harbola",
+            "position": "Assistant Professor"
+          },
+          {
+            "name": "Ms. Tabish Rao",
+            "position": "Assistant Professor"
+          },
+          {
+            "name": "Ms. Deepti Negi",
+            "position": "Assistant Professor"
+          },
+          {
+            "name": "Ms. Divya Kapil",
+            "position": "Assistant Professor"
+          },
+          {
+            "name": "Ms. Charu Negi",
+            "position": "Assistant Professor"
+          },
+          {
+            "name": "Dr. Poonam Verma",
+            "position": "Assistant Professor"
+          },
+          {
+            "name": "Mr. Neeraj Panwar",
+            "position": "Assistant Professor"
+          },
+          {
+            "name": "Ms. Sakshi Painuly",
+            "position": "Assistant Professor"
+          },
+          {
+            "name": "Ms. Nidhi Joshi",
+            "position": "Assistant Professor"
+          },
+          {
+            "name": "Ms. Atika Gupta",
+            "position": "Assistant Professor"
+          },
+          {
+            "name": "Mr. Deepak Kumar Chauhan",
+            "position": "Assistant Professor"
+          },
+          {
+            "name": "Mr. Madhur Thapliyal",
+            "position": "Assistant Professor"
+          },
+          {
+            "name": "Ms. Shobha Aswal",
+            "position": "Assistant Professor"
+          },
+          {
+            "name": "Ms. Anamika Arora",
+            "position": "Assistant Professor"
+          },
+          {
+            "name": "Mr. Gaurav Sharma",
+            "position": "Assistant Professor"
+          },
+          {
+            "name": "Mr. Tarun Bhatt",
+            "position": "Assistant Professor"
+          },
+          {
+            "name": "Ms. Tamanna Rawat",
+            "position": "Assistant Professor"
+          },
+          {
+            "name": "Ms. Harshita Sinha",
+            "position": "Assistant Professor"
+          },
+          {
+            "name": "Mr. Mohit Chauhan",
+            "position": "Assistant Professor"
+          },
+          {
+            "name": "Ms. Pooja Gunwant",
+            "position": "Assistant Professor"
+          },
+          {
+            "name": "Ms. Purva Mondi",
+            "position": "Assistant Professor"
+          }
+        ]
+      },
+
+      "management": {
+        "head_of_department": "Dr. Vishal Sagar",
+        "total_faculty": 56,
+        "faculty_members": [
+          {
+            "name": "Dr. Vishal Sagar",
+            "position": "Professor, HoD"
+          },
+          {
+            "name": "Prof. (Dr.) Prashant Singh Kutaula",
+            "position": "Professor of Practice"
+          },
+          {
+            "name": "Dr. Ajay Sharma",
+            "position": "Professor"
+          },
+          {
+            "name": "Prof. (Dr.) Ajay Kumar Saini",
+            "position": "Professor"
+          },
+          {
+            "name": "Dr. Shipra Gupta",
+            "position": "Professor"
+          },
+          {
+            "name": "Dr. Vikas Tyagi",
+            "position": "Professor"
+          },
+          {
+            "name": "Dr. Pankaj Agarwal",
+            "position": "Associate Professor"
+          },
+          {
+            "name": "Dr. Anuj Thapliyal",
+            "position": "Associate Professor"
+          },
+          {
+            "name": "Dr. Omdeep Gupta",
+            "position": "Associate Professor"
+          },
+          {
+            "name": "Dr. Shyam Sunder Kapri",
+            "position": "Associate Professor"
+          },
+          {
+            "name": "Dr. Pradeep Joshi",
+            "position": "Associate Professor"
+          },
+          {
+            "name": "Dr. Namrata Prakash",
+            "position": "Associate Professor"
+          },
+          {
+            "name": "Dr. Suruchi Sharma",
+            "position": "Associate Professor"
+          },
+          {
+            "name": "Dr. Hemant Chauhan",
+            "position": "Associate Professor"
+          },
+          {
+            "name": "Dr. Mayank Pant",
+            "position": "Associate Professor"
+          },
+          {
+            "name": "Dr. Raj Kumar Singh",
+            "position": "Associate Professor"
+          },
+          {
+            "name": "Dr. Shikha Rana",
+            "position": "Associate Professor"
+          },
+          {
+            "name": "Dr. Gaurav Chopra",
+            "position": "Associate Professor"
+          },
+          {
+            "name": "Dr. Sweta Chauhan",
+            "position": "Assistant Professor"
+          },
+          {
+            "name": "Dr. Harish Kumar",
+            "position": "Assistant Professor"
+          },
+          {
+            "name": "Dr. Sargam Bahl Walia",
+            "position": "Assistant Professor"
+          },
+          {
+            "name": "Dr. Ritesh Upadhyay",
+            "position": "Assistant Professor"
+          },
+          {
+            "name": "Dr. Shilpa Wadhwa",
+            "position": "Assistant Professor"
+          },
+          {
+            "name": "Dr. Shradha Jain",
+            "position": "Assistant Professor"
+          },
+          {
+            "name": "Dr. Parvi Bharti Singhal",
+            "position": "Assistant Professor"
+          },
+          {
+            "name": "Dr. Megha Sharma",
+            "position": "Assistant Professor"
+          },
+          {
+            "name": "Dr. Shagun Tyagi",
+            "position": "Assistant Professor"
+          },
+          {
+            "name": "Dr. Aditi Bains",
+            "position": "Assistant Professor"
+          },
+          {
+            "name": "Dr. Sushant Tomar",
+            "position": "Assistant Professor"
+          },
+          {
+            "name": "Dr. Garima Negi",
+            "position": "Assistant Professor"
+          },
+          {
+            "name": "Dr. Tania Mittal",
+            "position": "Assistant Professor"
+          },
+          {
+            "name": "Dr. Monu Bhardwaj",
+            "position": "Assistant Professor"
+          },
+          {
+            "name": "Dr. Subhash Chander Arora",
+            "position": "Assistant Professor"
+          },
+          {
+            "name": "Dr. Aanchal Sharma",
+            "position": "Assistant Professor"
+          },
+          {
+            "name": "Ms. Smitha Kothari",
+            "position": "Assistant Professor"
+          },
+          {
+            "name": "Mr. Jitendra Singh Chauhan",
+            "position": "Assistant Professor"
+          },
+          {
+            "name": "Ms. Divya Punj",
+            "position": "Assistant Professor"
+          },
+          {
+            "name": "Ms. Vineet Prabha",
+            "position": "Assistant Professor"
+          },
+          {
+            "name": "Ms. Priyanka Purohit",
+            "position": "Assistant Professor"
+          },
+          {
+            "name": "Ms. Anjali Malik",
+            "position": "Assistant Professor"
+          },
+          {
+            "name": "Mr. Naveen Negi",
+            "position": "Assistant Professor"
+          },
+          {
+            "name": "Ms. Pooja Bahuguna",
+            "position": "Assistant Professor"
+          },
+          {
+            "name": "Ms. Shagufa Ali",
+            "position": "Assistant Professor"
+          },
+          {
+            "name": "Ms. Priyanka Singwal",
+            "position": "Assistant Professor"
+          },
+          {
+            "name": "Ms. Shivani Solanki",
+            "position": "Assistant Professor"
+          },
+          {
+            "name": "Ms. Shristha Bhandari",
+            "position": "Assistant Professor"
+          },
+          {
+            "name": "Ms. Rohini",
+            "position": "Assistant Professor"
+          },
+          {
+            "name": "Mr. Karan Kumar",
+            "position": "Assistant Professor"
+          },
+          {
+            "name": "Mr. Pranjal Rawat",
+            "position": "Assistant Professor"
+          },
+          {
+            "name": "Mr. Manish Garg",
+            "position": "Assistant Professor",
+            "education": [
+              "MBA, Graphic Era Institute of Technology, Dehradun Uttarakhand Technical University, 2008",
+              "B-TECH (EC) 2005, Shobhit Ins. of Engineering & Technology, Saharanpur. Uttar Pradesh Technical University"
+            ],
+            "research_area": "Marketing Finance",
+            "experience": "15+ years"
+          },
+          {
+            "name": "Ms. Ruchi Dhameja",
+            "position": "Assistant Professor"
+          },
+          {
+            "name": "Mr. Akhilendra Negi",
+            "position": "Assistant Professor"
+          },
+          {
+            "name": "Ms. Amreen Siddiqui",
+            "position": "Assistant Professor"
+          },
+          {
+            "name": "Ms. Anshika Gautam",
+            "position": "Assistant Professor (Ad Hoc)"
+          },
+          {
+            "name": "Ms. Sweta Bagdwal",
+            "position": "Assistant Professor"
+          },
+          {
+            "name": "Mr. Bharat Balutia",
+            "position": "Assistant Professor"
+          },
+          {
+            "name": "Ms. Anam Parveen",
+            "position": "Assistant Professor"
+          },
+          {
+            "name": "Ms. Eakta Maiti",
+            "position": "Assistant Professor"
+          },
+          {
+            "name": "Mr. Shubham Uniyal",
+            "position": "Assistant Professor"
+          },
+          {
+            "name": "Dr. Abhilasha Mer",
+            "position": "Assistant Professor"
+          },
+          {
+            "name": "Dr. Sakshi Kaparwan",
+            "position": "Assistant Professor"
+          },
+          {
+            "name": "Ms. Akansha Dobhal",
+            "position": "Assistant Professor"
+          }
+        ]
+      },
+
+      "civil_engineering": {
+        "head_of_department": "Mr. Anoop Bahuguna",
+        "total_faculty": 7,
+        "faculty_members": [
+          {
+            "name": "Mr. Anoop Bahuguna",
+            "position": "Assistant Professor & HoD"
+          },
+          {
+            "name": "Dr. Bindu Agarwal",
+            "position": "Professor"
+          },
+          {
+            "name": "Ms. Ritiksha Danu",
+            "position": "Assistant Professor"
+          },
+          {
+            "name": "Mr. Mahesh Chandra Shah",
+            "position": "Assistant Professor"
+          },
+          {
+            "name": "Mr. Ankit Nainwal",
+            "position": "Assistant Professor"
+          },
+          {
+            "name": "Mr. Ankit Negi",
+            "position": "Assistant Professor"
+          },
+          {
+            "name": "Mr. Ankit Negi",
+            "position": "Assistant Professor"
+          }
+        ]
+      },
+
+      "mechanical_engineering": {
+        "head_of_department": "Mr. Tarun Kumar Dhiman",
+        "total_faculty": 10,
+        "faculty_members": [
+          {
+            "name": "Mr. Tarun Kumar Dhiman",
+            "position": "HOD, Assistant Professor"
+          },
+          {
+            "name": "Dr. Deepak Gupta",
+            "position": "Assistant Professor"
+          },
+          {
+            "name": "Dr. Ayush Painuly",
+            "position": "Assistant Professor"
+          },
+          {
+            "name": "Dr. Jitendra Singh",
+            "position": "Assistant Professor"
+          },
+          {
+            "name": "Dr. Sateesh Kumar Yadav",
+            "position": "Assistant Professor"
+          },
+          {
+            "name": "Ms. Vaishally Dogra",
+            "position": "Assistant Professor"
+          },
+          {
+            "name": "Mr. Deepak Verma",
+            "position": "Assistant Professor"
+          },
+          {
+            "name": "Mr. Amit Kumar Singh",
+            "position": "Assistant Professor"
+          },
+          {
+            "name": "Mr. Pankaj Negi",
+            "position": "Assistant Professor"
+          },
+          {
+            "name": "Mr. Rahul Keshari",
+            "position": "Assistant Professor"
+          }
+        ]
+      },
+
+      "law": {
+        "head_of_department": "Dr. Vivek Goyal",
+        "total_faculty": 14,
+        "faculty_members": [
+          {
+            "name": "Dr. Vivek Goyal",
+            "position": "Associate Professor & HOD"
+          },
+          {
+            "name": "Dr. Anupama Thakur",
+            "position": "Assistant Professor"
+          },
+          {
+            "name": "Dr. Manya Gupta",
+            "position": "Assistant Professor"
+          },
+          {
+            "name": "Mr. Ankit Purohit",
+            "position": "Assistant Professor"
+          },
+          {
+            "name": "Ms. Ankita Jakhmola",
+            "position": "Assistant Professor"
+          },
+          {
+            "name": "Mr. Kaushal Pandey",
+            "position": "Assistant Professor"
+          },
+          {
+            "name": "Ms. Vaishali Tyagi",
+            "position": "Assistant Professor"
+          },
+          {
+            "name": "Mr. Rakesh Tiwari",
+            "position": "Assistant Professor"
+          },
+          {
+            "name": "Ms. Divya Nautiyal",
+            "position": "Assistant Professor"
+          },
+          {
+            "name": "Ms. Manisha Melkani",
+            "position": "Assistant Professor"
+          },
+          {
+            "name": "Ms. Stuti Bhandari",
+            "position": "Assistant Professor"
+          },
+          {
+            "name": "Mr. Harshit Singh Jadoun",
+            "position": "Assistant Professor"
+          },
+          {
+            "name": "Ms. Divyansha Vasishth",
+            "position": "Assistant Professor"
+          },
+          {
+            "name": "Mr. Ateet Parihar",
+            "position": "Assistant Professor"
+          }
+        ]
+      },
+
+      "agriculture": {
+        "head_of_department": "Dr. Arvind Singh Negi",
+        "total_faculty": 22,
+        "faculty_members": [
+          {
+            "name": "Dr. Arvind Singh Negi",
+            "position": "Associate Professor & HOD"
+          },
+          {
+            "name": "Dr. Balwant Singh Rawat",
+            "position": "Associate Professor"
+          },
+          {
+            "name": "Dr. Anita Singh",
+            "position": "Associate Professor"
+          },
+          {
+            "name": "Dr. Vivek Kumar Pathak",
+            "position": "Associate Professor"
+          },
+          {
+            "name": "Dr. Pooja Bhatt",
+            "position": "Assistant Professor"
+          },
+          {
+            "name": "Dr. Rajneesh Bhardwaj",
+            "position": "Assistant Professor"
+          },
+          {
+            "name": "Dr. Rowndel Khwairakpam",
+            "position": "Assistant Professor"
+          },
+          {
+            "name": "Dr. Supriya Gupta",
+            "position": "Assistant Professor"
+          },
+          {
+            "name": "Dr. Ashish Kaushal",
+            "position": "Assistant Professor"
+          },
+          {
+            "name": "Dr. Pallavi Joshi",
+            "position": "Assistant Professor"
+          },
+          {
+            "name": "Dr. Anupama Rawat",
+            "position": "Assistant Professor"
+          },
+          {
+            "name": "Ms. Pooja Kala",
+            "position": "Assistant Professor"
+          },
+          {
+            "name": "Dr. Parul Chaudhary",
+            "position": "Assistant Professor"
+          },
+          {
+            "name": "Dr. Pallavi Bhatt",
+            "position": "Assistant Professor"
+          },
+          {
+            "name": "Dr. Harshita Negi",
+            "position": "Assistant Professor"
+          },
+          {
+            "name": "Dr. Sayantika Bhattacharya",
+            "position": "Assistant Professor"
+          },
+          {
+            "name": "Dr. Kumar Gaurav",
+            "position": "Assistant Professor"
+          },
+          {
+            "name": "Dr. Pragya Goswamy",
+            "position": "Assistant Professor"
+          },
+          {
+            "name": "Dr. Nikita Chauhan",
+            "position": "Assistant Professor"
+          },
+          {
+            "name": "Dr. Deepa Nainwal",
+            "position": "Assistant Professor"
+          },
+          {
+            "name": "Dr. Md Sabir Ahmed Mondol",
+            "position": "Assistant Professor"
+          },
+          {
+            "name": "Ms. Vriksha Singh",
+            "position": "Lecturer"
+          }
+        ]
+      },
+
+      "english": {
+        "head_of_department": "Prof. (Dr) S.A. Thameemul Ansari",
+        "total_faculty": 12,
+        "faculty_members": [
+          {
+            "name": "Prof. (Dr) S.A. Thameemul Ansari",
+            "position": "Professor & HoD"
+          },
+          {
+            "name": "Dr. Vipin Kumar",
+            "position": "Associate Professor"
+          },
+          {
+            "name": "Dr. Rupinder Kaur",
+            "position": "Assistant Professor"
+          },
+          {
+            "name": "Dr. Vinay Devrani",
+            "position": "Assistant Professor"
+          },
+          {
+            "name": "Dr. Pramod Thapliyal",
+            "position": "Assistant Professor"
+          },
+          {
+            "name": "Dr. Sonal Dutt",
+            "position": "Assistant Professor"
+          },
+          {
+            "name": "Dr. Laxmi Rawat Chauhan",
+            "position": "Associate Professor"
+          },
+          {
+            "name": "Dr. Himanshu Negi",
+            "position": "Assistant Professor"
+          },
+          {
+            "name": "Ms. Kanika Anthwal",
+            "position": "Assistant Professor"
+          },
+          {
+            "name": "Mr. Amar Pratap Singh",
+            "position": "Assistant Professor",
+            "education": [
+              "Ph.D English (Pursuing) IIIT, Guwahati",
+              "M.A Literature and Linguistics, Banaras Hindu University, Varanasi, 2011",
+              "B.A English (Hons.)"
+            ],
+            "research_area": "Digital Humanities, Literary Theory, Theoretical and Applied Linguistics",
+            "orcid_id": "0000-0002-5937-5486",
+            "scopus_id": "54826895231"
+          },
+          {
+            "name": "Ms. Yachna Suryavanshi",
+            "position": "Assistant Professor"
+          },
+          {
+            "name": "Ms. Gayatri Semwal",
+            "position": "Assistant Professor"
+          }
+        ]
+      },
+
+      "commerce": {
+        "head_of_department": "Dr. Rahul Raj",
+        "total_faculty": 13,
+        "faculty_members": [
+          {
+            "name": "Dr. Rahul Raj",
+            "position": "Associate Professor & HOD"
+          },
+          {
+            "name": "Dr. Vinayendra Mani Tripathi",
+            "position": "Professor"
+          },
+          {
+            "name": "Dr. Rakshit Negi",
+            "position": "Professor",
+            "education": [
+              "Ph.D. (Commerce), HNB Garhwal University, Srinagar (Garhwal), 2002",
+              "IMBA (Marketing), Ulyanovsk State University, Russian Federation, 2015",
+              "MA (Economics), HNB Garhwal University, Srinagar (Garhwal), 1998",
+              "B.Sc. (PCM), HNB Garhwal University, Srinagar (Garhwal), 1996"
+            ],
+            "research_area": "Consumer Behaviour, Services Marketing and International Business",
+            "experience": "20+ years",
+            "awards": [
+              "Best Research Paper Award in 4th ICT International Conference, Ministry of ICT, FDRE, 2011",
+              "Best Instructor of the Year 2006-07 Award by Unity University, Addis Ababa",
+              "Best Research Paper Award in 3rd International Conference on Technology Convergence, New Delhi, 2002"
+            ],
+            "orcid_id": "0000-0003-0776-3011",
+            "scopus_id": "35076267800",
+            "vidwan_id": "396986"
+          },
+          {
+            "name": "Dr. Amar Singh",
+            "position": "Associate Professor"
+          },
+          {
+            "name": "Dr. Megha Batola",
+            "position": "Associate Professor"
+          },
+          {
+            "name": "CS (Dr) Ruchitra Kaparwan",
+            "position": "Assistant Professor"
+          },
+          {
+            "name": "CS (Dr) Sangeeta Bagga",
+            "position": "Assistant Professor"
+          },
+          {
+            "name": "Dr. Mridu",
+            "position": "Assistant Professor"
+          },
+          {
+            "name": "Mr. Anil Dhasmana",
+            "position": "Assistant Professor"
+          },
+          {
+            "name": "CA Bijaya Laxmi Thapliyal",
+            "position": "Assistant Professor"
+          },
+          {
+            "name": "Dr. Barun Srivastava",
+            "position": "Assistant Professor"
+          },
+          {
+            "name": "Ms. Neha Rani",
+            "position": "Assistant Professor"
+          },
+          {
+            "name": "Mr. Swapnil Gaur",
+            "position": "Assistant Professor"
+          }
+        ]
+      },
+
+      "bfsi": {
+        "head_of_department": "Dr. Kamal Pant",
+        "faculty_members": [
+          {
+            "name": "Dr. Kamal Pant",
+            "position": "Professor & Head",
+            "education": [
+              "M.Com (Management), H.N.B. Garhwal University, Srinagar (Uttarakhand)",
+              "MBA (Banking, Finance & Investment), Gurukul Kangri University, Haridwar (Uttarakhand)",
+              "USET (Commerce), Kumaun University, Nainital (Uttarakhand)",
+              "Ph.D. (Commerce), C.C.S University, Meerut (Uttar Pradesh)"
+            ],
+            "research_area": "Financial Analytics, Direct Taxation",
+            "experience": "19 years",
+            "awards": [
+              "Empanelled as Visiting Faculty in Delhi Skill and Entrepreneurship University (DSEU), 2022",
+              "Best Teacher Award by Hon'ble Chief Minister of Uttarakhand, 2021",
+              "Global Faculty Award by AKS Worldwide Pvt. Ltd., 2020",
+              "Empanelled as Resource Person by SEBI, Govt. of India, 2016-2019",
+              "Best Professor Award in Banking & Finance by Dewang Mehta Business Awards, 2013"
+            ],
+            "vidwan_id": "404279"
+          }
+        ]
+      },
+
+      "allied_sciences_physics": {
+        "head_of_department": "Dr. Amit Raj Singh",
+        "faculty_members": [
+          {
+            "name": "Dr. Amit Raj Singh",
+            "position": "Associate Professor, HoD",
+            "education": [
+              "Ph.D., Physics, Banaras Hindu University, Varanasi",
+              "M.Sc., Udai Pratap Autonomous College, Varanasi",
+              "B.Sc. Udai Pratap Autonomous College, Varanasi"
+            ],
+            "research_area": "Soft Condensed Matter Theoretical Physics, Computational Physics, Biophysics, Statistical Mechanics",
+            "awards": [
+              "D. S. Kothari Fellow, UGC, New Delhi"
+            ],
+            "orcid_id": "0000-0002-7198-5420"
+          }
+        ]
+      }
+    },
+
+    "academic_programs": {
+      "levels": ["Undergraduate", "Postgraduate", "Doctoral", "Diploma"],
+      "total_courses": 85,
+      "undergraduate_courses": [
+        {
+          "name": "B.Des. in Interior Design",
+          "department": "Department of Design, Design",
+          "level": "Undergraduate"
+        },
+        {
+          "name": "B.Des. in Animation and Gaming",
+          "department": "Department of Design, Design",
+          "level": "Undergraduate"
+        },
+        {
+          "name": "B.Des. in User Experience and Interaction Design",
+          "department": "Department of Design",
+          "level": "Undergraduate"
+        },
+        {
+          "name": "B.Des. in Product Design",
+          "department": "Department of Design, Design",
+          "level": "Undergraduate"
+        },
+        {
+          "name": "B.Sc. in Animation and Gaming",
+          "department": "Department of Design, Design",
+          "level": "Undergraduate"
+        },
+        {
+          "name": "B.Com (Hons) – Corporate Public Accountant",
+          "department": "Commerce",
+          "level": "Undergraduate"
+        },
+        {
+          "name": "B. Tech (Civil Engineering with Specialization in GIS & Remote Sensing)",
+          "department": "Civil Engineering",
+          "level": "Undergraduate"
+        },
+        {
+          "name": "B. Tech (Civil Engineering with Specialization in Construction Management)",
+          "department": "Civil Engineering",
+          "level": "Undergraduate"
+        },
+        {
+          "name": "B. Tech in Electronics and Communication Engineering",
+          "department": "Electronics and Communication Engineering",
+          "level": "Undergraduate"
+        },
+        {
+          "name": "BCA (Hons.) in Cyber Security",
+          "department": "Computer Application",
+          "level": "Undergraduate"
+        }
+      ],
+      "postgraduate_courses": [
+        {
+          "name": "MBA in Artificial Intelligence and Data Science",
+          "level": "Post Graduate"
+        },
+        {
+          "name": "MBA in Business Analytics",
+          "level": "Post Graduate"
+        },
+        {
+          "name": "MBA in Human Resource Management",
+          "level": "Post Graduate"
+        },
+        {
+          "name": "MBA in Logistics & Supply Chain Management",
+          "level": "Post Graduate"
+        },
+        {
+          "name": "MBA in Marketing Management",
+          "level": "Post Graduate"
+        },
+        {
+          "name": "MBA in Hospital Administration",
+          "level": "Post Graduate"
+        },
+        {
+          "name": "MBA in Finance Management",
+          "level": "Post Graduate"
+        },
+        {
+          "name": "MBA in Information Technology",
+          "level": "Post Graduate"
+        },
+        {
+          "name": "MBA in International Business",
+          "level": "Post Graduate"
+        },
+        {
+          "name": "MBA in Retail Management",
+          "level": "Post Graduate"
+        }
+      ],
+      "computer_science_engineering_courses": [
+        {
+          "name": "B Tech Computer Science Engineering",
+          "department": "Computer Science and Engineering",
+          "level": "Undergraduate"
+        },
+        {
+          "name": "B.Tech CSE (Hons.) with specialization in Cybersecurity",
+          "department": "Computer Science and Engineering",
+          "level": "Undergraduate"
+        },
+        {
+          "name": "Diploma In Computer Science Engineering",
+          "department": "Computer Science and Engineering",
+          "level": "Diploma"
+        },
+        {
+          "name": "B.Tech CSE (Hons.) with specialization in Machine Learning and Artificial Intelligence",
+          "department": "Computer Science and Engineering",
+          "level": "Undergraduate"
+        },
+        {
+          "name": "B Tech Artificial Intelligence And Data Science",
+          "department": "Computer Science and Engineering",
+          "level": "Undergraduate"
+        }
+      ],
+      "management_courses": [
+        {
+          "name": "BBA With Specialization In Airport And Airline Management",
+          "department": "Management",
+          "level": "Undergraduate"
+        },
+        {
+          "name": "Bachelor of Business Administration (Hons.)",
+          "department": "Management",
+          "level": "Undergraduate"
+        },
+        {
+          "name": "BBA E-commerce and Digital Marketing",
+          "department": "Management",
+          "level": "Undergraduate"
+        },
+        {
+          "name": "BBA Entrepreneurship",
+          "department": "Management",
+          "level": "Undergraduate"
+        },
+        {
+          "name": "BBA (Hons.) E-commerce and Digital Marketing",
+          "department": "Management",
+          "level": "Undergraduate"
+        },
+        {
+          "name": "BBA (Hons.) in Artificial Intelligence and Data Science",
+          "department": "Management",
+          "level": "Undergraduate"
+        },
+        {
+          "name": "Master of Business Administration MBA",
+          "department": "Management",
+          "level": "Post Graduate"
+        },
+        {
+          "name": "BBA International Finance And Accounting With ACCA",
+          "department": "Management",
+          "level": "Undergraduate"
+        },
+        {
+          "name": "Bachelor of Business Administration",
+          "department": "Management",
+          "level": "Undergraduate"
+        }
+      ]
+    },
+
+    "admission_information": {
+      "application_fee": "₹1500 for all courses",
+      "process_steps": [
+        "Choose Course of Interest",
+        "Start Online Application",
+        "Fill Form and Upload Documents",
+        "Review Application and Submit",
+        "Complete Application Fee Payment",
+        "Finalize Admission by Paying Course Fee"
+      ],
+      "basis": "Merit of qualifying examination",
+      "scholarships": {
+        "merit_based": "70% scholarships awarded",
+        "female_candidates": "10% additional scholarship",
+        "defence_wards": "5% fee concession for wards of defence personnel",
+        "domicile_concession": "25% fee concession for Uttarakhand students"
+      },
+      "entrance_test": {
+        "name": "GECET - Graphic Era Common Entrance Test",
+        "scholarship_value": "Up to ₹100 Crores",
+        "benefits": [
+          "Up to 100% Tuition Fee Waiver",
+          "Merit-Based Selection Process",
+          "Guaranteed Admission for Toppers"
+        ]
+      }
+    },
+
+    "placement_statistics": {
+      "academic_year": "2024-25",
+      "total_offers": "2300+",
+      "highest_package": "₹61.99 Lakhs",
+      "package_categories": {
+        "40_lakh_plus": "10 offers",
+        "30_lakh_plus": "18 offers",
+        "15_lakh_plus": "33 offers",
+        "9_lakh_plus": "123 offers"
+      },
+      "average_package_last_year": "₹5 Lakhs+",
+      "alumni_network": "70,000+"
+    },
+
+    "top_recruiters": [
+      "Amazon",
+      "Adobe",
+      "Microsoft",
+      "Google",
+      "Infosys",
+      "NAB",
+      "PayPal",
+      "Genpact"
+    ],
+
+    "international_collaborations": {
+      "programs_offered": ["3+1+1", "3+1", "2+2", "1+1"],
+      "benefits": [
+        "International exposure",
+        "Semester exchange programs",
+        "Internships abroad",
+        "Degree programs abroad"
+      ]
+    },
+
+    "student_life": {
+      "clubs_activities": "Multiple student-led clubs",
+      "events": [
+        "Cultural events",
+        "Sports activities",
+        "GRAFEST (Grand Campus Fest)",
+        "Technical events",
+        "Workshops",
+        "Seminars"
+      ],
+      "facilities": [
+        "Hostels for boys and girls",
+        "Sports complex",
+        "Cultural activities",
+        "Leadership development programs"
+      ]
+    },
+
+    "contact_information": {
+      "toll_free_numbers": ["1800 890 6027", "1800 270 1280"],
+      "whatsapp": "+919520986896",
+      "email": ["admissions@gehu.ac.in", "enquiry@gehu.ac.in"],
+      "operating_hours": "8 AM to 8 PM (including Sundays and public holidays)",
+      "admission_centers": {
+        "total_centers": 28,
+        "locations": [
+          "Agra", "Almora", "Bareilly", "Bhopal", "Bijnor", "Chandigarh", "Delhi",
+          "Dharamshala", "Durgapur", "Gorkhpur", "Guwahati", "Haldwani", "Indore",
+          "Jaipur", "Jammu", "Kanpur", "Kathmandu", "Khatima", "Kotdwar", "Lucknow",
+          "Meerut", "Moradabad", "Patna", "Pithoragarh", "Praygraj", "Ranchi",
+          "Saharanpur", "Varanasi"
+        ]
+      }
+    },
+
+    "additional_campuses": {
+      "bhimtal": {
+        "location": "SatTal Road, Bhimtal, Nainital, Uttarakhand 263136",
+        "features": [
+          "Serene environment in Kumaon foothills",
+          "Open Air Theatre",
+          "Well-connected by road and rail"
+        ]
+      },
+      "haldwani": {
+        "location": "Tularampur, Bareilly Road, Beriparao, Haldwani-263139 (Nainital)",
+        "features": [
+          "Urban commercial market location",
+          "Impressive amphitheater",
+          "Dynamic learning environment"
+        ]
+      }
+    },
+
+    "notices_updates": [
+      {
+        "title": "Term Evaluation Theory (Even Semester) Regular Examination – May 2026",
+        "date": "April 30, 2026",
+        "description": "Applicable to students who were on internship"
+      },
+      {
+        "title": "Schedule for End (Even) Semester Examination-Theory (Regular and Back Paper) May 2026 for MA English IV sem",
+        "date": "April 30, 2026"
+      },
+      {
+        "title": "Notice Regarding Registration for Remedial Classes for Debarred Students",
+        "date": "April 7, 2026"
+      },
+      {
+        "title": "Pharmacy Sessional II Regular Examination, April 2026",
+        "date": "April 7, 2026"
+      }
+    ],
+
+    "quick_links": {
+      "student_area": "ERP access",
+      "digital_library": "Online resources",
+      "alumni_connect": "Alumni network",
+      "exam_portal": "Examination services",
+      "fee_payment": "Online payment system",
+      "events": "University events calendar"
+    },
+
+    "university_statistics": {
+      "courses_available": "50+",
+      "mooc_courses_completed": "10000+",
+      "international_tieups": "20+",
+      "foss_computers": "500+",
+      "fee_waiver_uttarakhand": "0 Crores+ (ongoing)",
+      "alumni_network_size": "27,000+"
+    },
+
+    "department_highlights": {
+      "chemistry": [
+        "Patent Unveiled for Innovative 'Smart Notice Board System'",
+        "Graphic Era Hill University Secures Patent for Innovative 'Handle Sanitizing Device'",
+        "Exploring Solutions for Water Conservation at Graphic Era Hill University"
+      ]
+    },
+
+    "data_collection_info": {
+      "source": "Graphic Era Hill University Official Website (https://gehu.ac.in/dehradun/)",
+      "pages_crawled": [
+        "Main Page",
+        "Admissions",
+        "Apply Now",
+        "Course Search",
+        "Academics",
+        "Faculty Pages",
+        "Department Pages",
+        "Contact Information",
+        "About Us"
+      ],
+      "collection_date": "2026",
+      "total_faculty_members_collected": "200+",
+      "departments_covered": [
+        "Computer Science and Engineering",
+        "Computer Application",
+        "Management",
+        "Civil Engineering",
+        "Mechanical Engineering",
+        "Law",
+        "Agriculture",
+        "English",
+        "Commerce",
+        "BFSI",
+        "Allied Sciences"
+      ]
+    }
   }
 }

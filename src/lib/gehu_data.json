@@ -30,10 +30,12 @@
       ]
     },
     "leadership": {
-      "founder": "Prof. (Dr.) Kamal Ghanshala",
+      "president_founder": "Prof. (Dr.) Kamal Ghanshala",
+      "vice_chancellor": "Prof. (Dr.) Amit R. Bhatt",
       "vision": "To be an internationally recognized, inquiry-driven, ethically engaged university.",
       "mission": "To promote learning in true spirit, offering knowledge and skills needed to succeed."
     }
+
   },
   "accreditations_rankings": {
     "highlights": [

@@ -128,12 +128,24 @@ export function ChatContainer() {
               )}
             >
               <div className={cn(
-                "w-10 h-10 rounded-full flex items-center justify-center shrink-0 border",
+                "w-10 h-10 rounded-full flex items-center justify-center shrink-0 border overflow-hidden",
                 m.role === "assistant" 
                   ? "bg-hippo-primary/10 border-hippo-primary/30 text-hippo-primary shadow-neon" 
                   : "bg-white/5 border-white/10 text-white"
               )}>
-                {m.role === "assistant" ? <Bot className="w-5 h-5" /> : <User className="w-5 h-5" />}
+                {m.role === "assistant" ? (
+                  <img 
+                    src="/images/hippo-bot.png" 
+                    alt="Bot" 
+                    className="w-full h-full object-cover"
+                    onError={(e) => {
+                      const target = e.target as HTMLImageElement;
+                      target.src = "https://ui-avatars.com/api/?name=H&background=3b82f6&color=fff";
+                    }}
+                  />
+                ) : (
+                  <User className="w-5 h-5" />
+                )}
               </div>
 
               <div className={cn(
@@ -180,8 +192,12 @@ export function ChatContainer() {
             animate={{ opacity: 1 }}
             className="flex gap-4"
           >
-            <div className="w-10 h-10 rounded-full flex items-center justify-center bg-hippo-primary/10 border border-hippo-primary/30 text-hippo-primary animate-pulse">
-              <Bot className="w-5 h-5" />
+            <div className="w-10 h-10 rounded-full flex items-center justify-center bg-hippo-primary/10 border border-hippo-primary/30 text-hippo-primary animate-pulse overflow-hidden">
+               <img 
+                src="/images/hippo-bot.png" 
+                alt="Bot" 
+                className="w-full h-full object-cover opacity-50"
+              />
             </div>
             <div className="glass-card p-4 rounded-2xl flex items-center gap-2">
               <div className="w-1.5 h-1.5 bg-hippo-primary rounded-full animate-bounce" />

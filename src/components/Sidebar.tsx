@@ -59,8 +59,16 @@ export function Sidebar() {
         </button>
 
         <div className="flex items-center gap-3 mb-10">
-          <div className="w-10 h-10 rounded-full bg-hippo-primary shadow-neon flex items-center justify-center animate-pulse-slow">
-            <span className="font-bold text-white">H</span>
+          <div className="w-10 h-10 rounded-full border border-hippo-primary/30 shadow-neon flex items-center justify-center overflow-hidden">
+            <img 
+              src="/images/hippo-bot.png" 
+              alt="Hippo Bot" 
+              className="w-full h-full object-cover"
+              onError={(e) => {
+                const target = e.target as HTMLImageElement;
+                target.src = "https://ui-avatars.com/api/?name=H&background=3b82f6&color=fff";
+              }}
+            />
           </div>
           <h1 className="text-2xl font-bold glow-text tracking-wider">HIPPO</h1>
         </div>
